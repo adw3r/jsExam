@@ -2,9 +2,6 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Monticello</title>
   <!--TODO-->
   <!--  <meta content="" name="description">-->
   <!--  <meta content="JS Exam" property="og:title">-->
@@ -14,250 +11,254 @@
   <!--  <meta content="*/*" property="og:image">-->
   <!--  <meta content="*/*" property="og:image:alt">-->
   <!--  <link href="site.webmanifest" rel="manifest">-->
-
-  <link href="/favicon.ico" rel="icon" sizes="any">
-  <link href="/icon.svg" rel="icon" type="image/svg+xml">
-  <link href="icon.png" rel="apple-touch-icon">
-
-  <link href="assets/css/style.min.css" rel="stylesheet">
+  <!--  <link href="/favicon.ico" rel="icon" sizes="any">-->
+  <!--  <link href="/icon.svg" rel="icon" type="image/svg+xml">-->
+  <!--  <link href="icon.png" rel="apple-touch-icon">-->
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Monticello</title>
+  <link href="assets/css/index.min.css" rel="stylesheet">
 </head>
 
 <body>
 <div class="mobile-menu" hidden></div>
-<div class="page-wrapper">
-  <header class="header">
+<div class="page">
+  <header class="header" role="banner">
     <div class="header__logo">
-      <a href="/" title="Logo">
-        <img alt="Monticello" src="assets/img/Logo.png">
+      <a aria-label="Monticello home" href="/">
+        <img alt="Monticello logo" src="assets/img/Logo.png">
       </a>
     </div>
-    <nav class="header__nav">
+    <nav aria-label="Primary" class="header__nav">
       <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a href="/" title="About us"></a>
+        <li class="header__nav-item active">
+          <a class="header__nav-link" href="#about">
+            <svg fill="none" height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4.5" cy="4.5" r="4" stroke="white"/>
+            </svg>
+            About us
+          </a>
         </li>
         <li class="header__nav-item">
-          <a href="/" title="Projects"></a>
+          <a class="header__nav-link" href="#projects">
+            <svg fill="none" height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4.5" cy="4.5" r="4" stroke="white"/>
+            </svg>
+            Projects
+          </a>
         </li>
         <li class="header__nav-item">
-          <a href="/" title="News"></a>
+          <a class="header__nav-link" href="#news">
+            <svg fill="none" height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4.5" cy="4.5" r="4" stroke="white"/>
+            </svg>
+            News
+          </a>
         </li>
         <li class="header__nav-item">
-          <a href="/" title="Contact"></a>
+          <a class="header__nav-link" href="#contact">
+            <svg fill="none" height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4.5" cy="4.5" r="4" stroke="white"/>
+            </svg>
+            Contact
+          </a>
         </li>
       </ul>
     </nav>
-    <!--TODO burger-->
     <div class="header__icons">
-      <ul class="social-list">
-        <li>
-          <a href="https://facebook.com" rel="nofollow"></a>
+      <ul aria-label="Social media" class="social">
+        <li class="social__item">
+          <a aria-label="Facebook" class="social__link" href="https://facebook.com"
+             rel="nofollow noopener" target="_blank"></a>
         </li>
-        <li>
-          <a href="https://twitter.com" rel="nofollow"></a>
-        </li>
-        <li>
-          <a href="https://instagram.com" rel="nofollow"></a>
-        </li>
+        <li class="social__item"><a aria-label="Twitter" class="social__link" href="https://twitter.com"
+                                    rel="nofollow noopener" target="_blank"></a></li>
+        <li class="social__item"><a aria-label="Instagram" class="social__link" href="https://instagram.com"
+                                    rel="nofollow noopener" target="_blank"></a></li>
       </ul>
     </div>
-    <div class="header__burger" hidden></div>
+    <button aria-label="Open menu" class="header__burger" hidden type="button"></button>
   </header>
-  <main class="container">
-    <section class="hero">
+  <main>
+    <section class="hero" id="about">
       <h1>
-        SIMPLE & MODERN
+        <span class="hero__title">SIMPLE & MODERN</span>
       </h1>
-      <p>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
+      <p class="hero__subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
     </section>
-    <section class="about">
+    <section class="about" id="projects">
       <h2>What we do</h2>
-      <section class="about-item">
-        <div class="about-content">
-          <hgroup>
-            <p>ONE WORLD</p>
-            <h3>TRADE CENTER</h3>
-          </hgroup>
+      <section class="about__item">
+        <div class="about__content">
+          <p>ONE WORLD</p>
+          <h3>TRADE CENTER</h3>
           <p>
             Increasing prosperity in our lives can be accomplished by having the right frame of mind. The truth is, our
             thoughts are very powerful.
           </p>
 
-          <button class="btn">
+          <button class="btn" type="button">
             MORE DETAILS
           </button>
-          <div class="geo">
-            <span></span>
+          <div class="about__geo">
+            <span aria-hidden="true"></span>
             <span>New York City, United States - 1776 feet </span>
           </div>
 
         </div>
-        <div class="img-wrap">
-          <img alt="" src="">
+        <div class="about__image">
+          <img alt="Trade Center" class="about__img" src="">
         </div>
       </section>
-      <section class="about-item">
-        <div class="about-content">
-          <hgroup>
-            <p>INTERNATIONAL</p>
-            <h3>COMMERCE CENTRE</h3>
-          </hgroup>
+      <section class="about__item">
+        <div class="about__content">
+          <p>INTERNATIONAL</p>
+          <h3>COMMERCE CENTRE</h3>
           <p>
             Successful businesses have many things in common, today we’ll look at the big ‘R’ of recognition and how a
             digital advertising network may help.
           </p>
 
-          <button class="btn">
+          <button class="btn" type="button">
             MORE DETAILS
           </button>
           <div>
-            <span></span>
+            <span aria-hidden="true"></span>
             <span class="geo">Hong Kong - 1588 feet</span>
           </div>
         </div>
-        <div class="img-wrap">
-          <img alt="" src="">
+        <div class="about__image">
+          <img alt="Commerce Centre" class="about__img" src="">
         </div>
       </section>
     </section>
-    <section>
+    <section class="news" id="news">
       <h2>Latest news</h2>
-      <div>
-        <div>
-          <div class="img-wrap">
-            <img src="" alt="">
+      <div class="news__list">
+        <article class="news__item">
+          <div class="news__image">
+            <img alt="Building exterior" class="news__img" src="">
           </div>
-          <h3>
+          <h3 class="news__title">
             SEE THE UNMATCHED BEAUTY OF THE GREAT.
           </h3>
-          <p>
+          <p class="news__excerpt">
             Free directories: directories are perfect for customers that are searching for...
           </p>
-          <div>
-            <img src="" alt="">
-            <div>
-            <span>
-              ALJA BRUN
-            </span>
-              <span>20 Jan 2020</span>
+          <div class="news__author">
+            <img alt="Author avatar" class="news__author-avatar" src="">
+            <div class="news__author-meta">
+              <span class="news__author-name">ALJA BRUN</span>
+              <span class="news__date">20 Jan 2020</span>
             </div>
           </div>
-        </div>
-        <div>
-          <div class="img-wrap">
-            <img src="" alt="">
+        </article>
+        <article class="news__item">
+          <div class="news__image">
+            <img alt="Modern architecture" class="news__img" src="">
           </div>
-          <h3>
+          <h3 class="news__title">
             SEE THE UNMATCHED BEAUTY OF THE GREAT.
           </h3>
-          <p>
+          <p class="news__excerpt">
             Free directories: directories are perfect for customers that are searching for...
           </p>
-          <div>
-            <img src="" alt="">
-            <div>
-            <span>
-              ALJA BRUN
-            </span>
-              <span>20 Jan 2020</span>
+          <div class="news__author">
+            <img alt="Author avatar" class="news__author-avatar" src="">
+            <div class="news__author-meta">
+              <span class="news__author-name">ALJA BRUN</span>
+              <span class="news__date">20 Jan 2020</span>
             </div>
           </div>
-        </div>
-        <div>
-          <div class="img-wrap">
-            <img src="" alt="">
+        </article>
+        <article class="news__item">
+          <div class="news__image">
+            <img alt="Curved facade" class="news__img" src="">
           </div>
-          <h3>
+          <h3 class="news__title">
             SEE THE UNMATCHED BEAUTY OF THE GREAT.
           </h3>
-          <p>
+          <p class="news__excerpt">
             Free directories: directories are perfect for customers that are searching for...
           </p>
-          <div>
-            <img src="" alt="">
-            <div>
-            <span>
-              ALJA BRUN
-            </span>
-              <span>20 Jan 2020</span>
+          <div class="news__author">
+            <img alt="Author avatar" class="news__author-avatar" src="">
+            <div class="news__author-meta">
+              <span class="news__author-name">ALJA BRUN</span>
+              <span class="news__date">20 Jan 2020</span>
             </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
-    <section>
+    <section class="gallery" id="gallery">
       <h2>Gallery</h2>
-      <div class="gallery">
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
+      <div class="gallery__list">
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
+        <div class="gallery__item"></div>
       </div>
-      <button class="btn">
+      <button class="btn" type="button">
         SEE MORE
       </button>
     </section>
   </main>
-  <footer>
-    <div class="map">
+  <footer class="footer" role="contentinfo">
+    <div class="footer__map">
     </div>
     <div class="contact">
-      <ul class="contact-list">
-        <li>
-          <span class="icon"></span>
-          <span>91 Nolan Extensions Suite 670</span>
-        </li>
-        <li>
-          <span class="icon"></span>
-          <span>+001 356-868-2454</span>
-        </li>
-        <li>
-          <span class="icon"></span>
-          <span>montichello@service.com</span>
-        </li>
-        <li>
-          <span class="icon"></span>
-          <span>From 07:05AM to 19:30PM</span>
-        </li>
-      </ul>
-      <div class="contact-info">
-        <form action="#" class="block-form" method="post">
-          <label>
-            <input placeholder="Name" type="text">
-          </label>
+      <address class="contact__address" id="contact">
+        <ul class="contact__list">
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <span>91 Nolan Extensions Suite 670</span>
+          </li>
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <a href="tel:+0013568682454">+001 356-868-2454</a>
+          </li>
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <a href="mailto:montichello@service.com">montichello@service.com</a>
+          </li>
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <span>From 07:05AM to 19:30PM</span>
+          </li>
+        </ul>
+      </address>
+      <div class="contact__info">
+        <form action="#" class="contact__form" method="post">
+          <label for="contact-name">Name</label>
+          <input autocomplete="name" id="contact-name" name="name" placeholder="Name" type="text">
 
-          <label>
-            <input placeholder="Email" type="text">
-          </label>
+          <label for="contact-email">Email</label>
+          <input autocomplete="email" id="contact-email" name="email" placeholder="Email" type="email">
 
           <button class="btn" type="submit">Submit</button>
         </form>
       </div>
     </div>
-    <div class="info">
-      <div class="info-row">
+    <div class="footer__info">
+      <div class="footer__row">
         <div class="footer__logo">
-          <a href="/" title="Logo">
-            <img alt="Monticello" src="assets/img/Logo.png">
+          <a aria-label="Monticello home" href="/">
+            <img alt="Monticello logo" src="assets/img/Logo.png">
           </a>
         </div>
-        <ul class="social-list">
-          <li>
-            <a href="https://facebook.com" rel="nofollow"></a>
-          </li>
-          <li>
-            <a href="https://twitter.com" rel="nofollow"></a>
-          </li>
-          <li>
-            <a href="https://instagram.com" rel="nofollow"></a>
-          </li>
+        <ul aria-label="Social media" class="social">
+          <li class="social__item"><a aria-label="Facebook" class="social__link" href="https://facebook.com"
+                                      rel="nofollow noopener" target="_blank"></a></li>
+          <li class="social__item"><a aria-label="Twitter" class="social__link" href="https://twitter.com"
+                                      rel="nofollow noopener" target="_blank"></a></li>
+          <li class="social__item"><a aria-label="Instagram" class="social__link" href="https://instagram.com"
+                                      rel="nofollow noopener" target="_blank"></a></li>
         </ul>
       </div>
-      <div class="info-row">
-        <span class="footer__copyright">
-          Copyrights © 2020 Montichello
-        </span>
+      <div class="footer__row">
+        <small class="footer__copyright">Copyrights © 2020 Montichello</small>
       </div>
     </div>
   </footer>

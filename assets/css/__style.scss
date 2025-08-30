@@ -1,4 +1,4 @@
-@import 'variables';
+@import '_variables';
 
 html {
   color: #222;
@@ -229,12 +229,18 @@ body {
   overflow-x: hidden;
 }
 
-.page-wrapper {
+.page {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.page-wrapper main {
+.page main {
   flex-grow: 1;
+}
+
+
+a {
+  color: inherit;
+  text-decoration: none;
 }

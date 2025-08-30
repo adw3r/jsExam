@@ -1,6 +1,39 @@
-@use "style";
+@use "__style";
+body {
+  font-family: 'Montserrat', sans-serif;
+}
 
 
-header {
+.header {
+  //background-color: #999999;
+  display: flex;
+  align-items: center;
 
+  &__logo {
+    //display: inline-block;
+    min-width: 241px;
+    //height: 54px;
+    //justify-content: center;
+    //align-items: center;
+    //flex-shrink: 0;
+  }
+
+  &__nav {
+    &-list {
+      display: inline-flex;
+      gap: 70px;
+      &-item {
+        &.active {
+          svg {
+            fill: white;
+          }
+        }
+      }
+    }
+  }
+
+  &__icons {
+    display: inline-flex;
+    gap: 20px;
+  }
 }

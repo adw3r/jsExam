@@ -357,7 +357,6 @@ header .container nav ul li.active svg {
   background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%), url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
   background-blend-mode: multiply;
   height: 100vh;
-  margin-bottom: 100px;
 }
 .hero .container {
   display: flex;
@@ -406,6 +405,7 @@ h2:before {
   flex-direction: column;
   gap: 190px;
   margin-bottom: 150px;
+  padding-top: 100px;
 }
 .about h2 {
   margin-bottom: 0;
@@ -460,7 +460,7 @@ h2:before {
 .news {
   background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%), url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
   background-blend-mode: multiply;
-  height: 100vh;
+  height: 100dvh;
   margin-bottom: 100px;
 }
 .news h2 {

@@ -613,12 +613,15 @@ h2:before {
   background-color: lightgray;
 }
 .footer .footer__contact {
-  display: none;
   position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #FFF;
   width: 770px;
   height: 450px;
   flex-shrink: 0;
+  padding: 60px;
 }
 .footer .footer__info {
   color: #FFF;

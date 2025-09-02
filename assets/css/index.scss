@@ -232,8 +232,8 @@ h2 {
     //max-width: unset;
 
     .news__list {
-      display: flex;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
       margin-bottom: 150px;
 

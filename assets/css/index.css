@@ -490,8 +490,8 @@ h2:before {
   padding: 150px 0;
 }
 .news .container .news__list {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin-bottom: 150px;
 }

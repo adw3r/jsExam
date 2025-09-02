@@ -297,6 +297,18 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+.btn {
+  color: #000;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: transparent;
+  padding: 16px 40px;
+  border: black 1px solid;
+  cursor: pointer;
+}
+
 header {
   position: fixed;
   left: 0;
@@ -374,15 +386,10 @@ header .container .header__icons ul {
   letter-spacing: 0.3375rem;
 }
 
-.about {
-  display: flex;
-  flex-direction: column;
-  gap: 190px;
-  margin-bottom: 150px;
-}
-.about h2 {
+h2 {
   text-transform: uppercase;
   position: relative;
+  margin-bottom: 90px;
   color: #2C4058;
   text-align: center;
   font-size: 2.75rem;
@@ -390,7 +397,7 @@ header .container .header__icons ul {
   font-weight: 700;
   line-height: normal;
 }
-.about h2:before {
+h2:before {
   position: relative;
   content: "";
   display: block;
@@ -400,6 +407,16 @@ header .container .header__icons ul {
   transform: translateX(-50%);
   background-color: #2C4058;
   margin-bottom: 20px;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 190px;
+  margin-bottom: 150px;
+}
+.about h2 {
+  margin-bottom: 0;
 }
 .about .about__item {
   display: flex;
@@ -453,6 +470,63 @@ header .container .header__icons ul {
   font-family: "Open Sans", sans-serif;
   font-size: 0.9375rem;
   font-style: italic;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.news {
+  background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%), url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
+  background-blend-mode: multiply;
+  height: 100vh;
+  margin-bottom: 100px;
+}
+.news h2 {
+  color: #FFF;
+}
+.news h2:before {
+  background-color: #FFF;
+}
+.news .container {
+  padding: 150px 0;
+}
+.news .container .news__list {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin-bottom: 150px;
+}
+.news .container .news__list .news__item {
+  width: 370px;
+  height: 514px;
+  flex-shrink: 0;
+}
+.news .container .news__list .news__item .content {
+  background-color: #FFF;
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+}
+.news .container .news__list .news__item .content .news__author {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-content: start;
+  justify-content: start;
+}
+.news .container .news__list .news__item .content .news__author .news__author-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.news .container .news__list .news__item .content .news__author .news__author-meta {
+  display: flex;
+  flex-direction: column;
+}
+.news .container .news__list .news__item .content .news__author .news__author-meta .news__date {
+  color: #55B7FF;
+  font-size: 0.875rem;
+  font-style: normal;
   font-weight: 400;
   line-height: normal;
 }

@@ -48,9 +48,9 @@
     }
     setupHeaderScrollState();
     setupScrollSpy();
-    renderNewsFromJson().then(function () {
-      setupNewsSlider();
-    });
+    // renderNewsFromJson().then(function () {
+    //   setupNewsSlider();
+    // });
     setupLightGallery();
     setupGalleryLoopClick();
   });
@@ -88,7 +88,6 @@
       plugins: [lgZoom, lgThumbnail],
       speed: 300,
       download: false,
-      licenseKey: '0000-0000-000-0000' // optional placeholder
     });
   }
 

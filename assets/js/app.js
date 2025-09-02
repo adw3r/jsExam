@@ -47,6 +47,7 @@
     }
     setupHeaderScrollState();
     setupScrollSpy();
+    setupNewsSlider();
   });
 
   // Toggle header background when hero is scrolled past
@@ -72,6 +73,63 @@
       threshold = hero.offsetHeight - (getHeaderOffset() || 0);
       update();
     });
+  }
+
+  // Infinite horizontal slider for Latest news
+  function setupNewsSlider() {
+    const list = document.querySelector('.news .news__list');
+    if (!list) return;
+
+    const items = Array.from(list.querySelectorAll('.news__item'));
+    if (items.length === 0) return;
+
+    // Wrap items in a track
+    let track = list.querySelector('.news__track');
+    if (!track) {
+      track = document.createElement('div');
+      track.className = 'news__track';
+      // Move existing items into the track
+      items.forEach((it) => track.appendChild(it));
+      list.appendChild(track);
+    }
+
+    // Clone items to allow seamless loop
+    const cloneCount = Math.min(items.length, 5);
+    for (let i = 0; i < cloneCount; i++) {
+      const clone = items[i].cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      track.appendChild(clone);
+    }
+
+    let isPaused = false;
+    let lastTs = 0;
+    let offset = 0;
+    const speed = 0.1; // px per ms
+
+    function tick(ts) {
+      if (!lastTs) lastTs = ts;
+      const dt = ts - lastTs;
+      lastTs = ts;
+      if (!isPaused) {
+        offset -= dt * speed;
+        const first = track.firstElementChild;
+        if (first) {
+          const firstWidth = first.getBoundingClientRect().width + 30; // include gap
+          if (-offset >= firstWidth) {
+            offset += firstWidth;
+            track.appendChild(first);
+          }
+        }
+        track.style.transform = 'translateX(' + offset + 'px)';
+      }
+      requestAnimationFrame(tick);
+    }
+
+    // Pause on hover
+    list.addEventListener('mouseenter', function () { isPaused = true; });
+    list.addEventListener('mouseleave', function () { isPaused = false; });
+
+    requestAnimationFrame(tick);
   }
 
   // Scrollspy: toggle nav active based on section under header bottom

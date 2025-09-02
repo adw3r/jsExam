@@ -531,10 +531,18 @@ h2:before {
   padding: 150px 0;
 }
 .news .container .news__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  overflow: hidden;
+  display: block;
   gap: 30px;
   margin-bottom: 150px;
+}
+.news .container .news__list .news__track {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 30px;
+  will-change: transform;
 }
 .news .container .news__list .news__item {
   width: 370px;

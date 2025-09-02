@@ -52,6 +52,7 @@
       setupNewsSlider();
     });
     setupLightGallery();
+    setupGalleryLoopClick();
   });
 
   // Toggle header background when hero is scrolled past
@@ -88,6 +89,23 @@
       speed: 300,
       download: false,
       licenseKey: '0000-0000-000-0000' // optional placeholder
+    });
+  }
+
+  // Make clicking the overlay loop icon behave like clicking the gallery image/link
+  function setupGalleryLoopClick() {
+    const container = document.querySelector('.gallery__list');
+    if (!container) return;
+    container.addEventListener('click', function (event) {
+      const loop = event.target.closest('.loop');
+      if (!loop) return;
+      const item = loop.closest('.gallery__item');
+      if (!item) return;
+      const link = item.querySelector('.gallery__link');
+      if (!link) return;
+      event.preventDefault();
+      event.stopPropagation();
+      link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
     });
   }
 

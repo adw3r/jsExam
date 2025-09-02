@@ -503,10 +503,11 @@ h2 {
 }
 
 .loop {
+  cursor: pointer;
   &:hover {
     scale: 1.2;
     transition: all 0.2s ease;
-    transform: translate(-40%, -42%);
+    //transform: translate(-40%, -40%);
   }
 
   position: absolute;

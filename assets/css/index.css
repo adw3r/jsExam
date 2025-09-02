@@ -708,6 +708,7 @@ h2:before {
 }
 
 .loop {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -719,7 +720,6 @@ h2:before {
 .loop:hover {
   scale: 1.2;
   transition: all 0.2s ease;
-  transform: translate(-40%, -42%);
 }
 
 /*# sourceMappingURL=index.css.map */

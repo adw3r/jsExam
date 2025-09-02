@@ -539,14 +539,20 @@ h2:before {
   flex-direction: column;
   display: flex;
   align-items: center;
-  padding: 20px 30px;
+  padding: 30px 20px;
+}
+.news .container .news__list .news__item .content .news__title {
+  margin-bottom: 15px;
+}
+.news .container .news__list .news__item .content .news__excerpt {
+  margin-bottom: 40px;
 }
 .news .container .news__list .news__item .content .news__author {
   display: flex;
   flex-direction: row;
   gap: 20px;
-  align-content: start;
-  justify-content: start;
+  width: 100%;
+  align-items: center;
 }
 .news .container .news__list .news__item .content .news__author .news__author-avatar {
   width: 60px;
@@ -575,6 +581,9 @@ h2:before {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
+}
+.gallery .gallery__list .gallery__item {
+  position: relative;
 }
 .gallery .gallery__list .gallery__item:first-child {
   grid-row: 2 span;
@@ -624,6 +633,16 @@ h2:before {
   max-width: 770px;
   display: flex;
   justify-content: space-between;
+}
+
+.loop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 70px;
+  height: 70px;
 }
 
 /*# sourceMappingURL=index.css.map */

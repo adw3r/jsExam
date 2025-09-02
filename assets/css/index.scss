@@ -27,6 +27,7 @@ body {
   display: inline-flex;
   flex-direction: row;
   gap: 20px;
+
   svg:hover {
     filter: invert(1);
   }
@@ -254,6 +255,7 @@ h2 {
       display: flex;
       gap: 10px;
       position: relative;
+
       svg {
         position: relative;
         top: 4px;
@@ -296,14 +298,22 @@ h2 {
           flex-direction: column;
           display: flex;
           align-items: center;
-          padding: 20px 30px;
+          padding: 30px 20px;
+
+          .news__title {
+            margin-bottom: 15px;
+          }
+
+          .news__excerpt {
+            margin-bottom: 40px;
+          }
 
           .news__author {
             display: flex;
             flex-direction: row;
             gap: 20px;
-            align-content: start;
-            justify-content: start;
+            width: 100%;
+            align-items: center;
 
             .news__author-avatar {
               width: 60px;
@@ -342,6 +352,8 @@ h2 {
     gap: 10px;
 
     .gallery__item {
+      position: relative;
+
       &:first-child {
         grid-row: 2 span;
         grid-column: 2 span;
@@ -394,11 +406,7 @@ h2 {
     height: 50dvh;
 
     position: relative;
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
-    //top: 40vh;
-    //width: 100vw;
+
     .footer__logo {
       margin-bottom: 40px;
     }
@@ -411,4 +419,14 @@ h2 {
       justify-content: space-between;
     }
   }
+}
+
+.loop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  width: 70px;
+  height: 70px;
 }

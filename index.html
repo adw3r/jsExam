@@ -25,7 +25,7 @@
 <div class="page">
   <header class="header" role="banner">
     <div class="container">
-      <div class="header__logo">
+      <div class="logo">
         <a aria-label="Monticello home" href="/">
           <img alt="Monticello logo" src="assets/img/Logo.png">
         </a>
@@ -66,38 +66,36 @@
           </li>
         </ul>
       </nav>
-      <div class="header__icons">
-        <ul aria-label="Social media" class="social">
-          <li class="social__item">
-            <a aria-label="Facebook" class="social__link" href="https://facebook.com"
-               rel="nofollow noopener" target="_blank">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="assets/icons/fb.svg"></use>
-              </svg>
+      <ul aria-label="Social media" class="social">
+        <li class="social__item">
+          <a aria-label="Facebook" class="social__link" href="https://facebook.com"
+             rel="nofollow noopener" target="_blank">
+            <svg fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="assets/icons/fb.svg"></use>
+            </svg>
 
-            </a>
-          </li>
-          <li class="social__item">
-            <a aria-label="Twitter" class="social__link" href="https://twitter.com"
-                                      rel="nofollow noopener" target="_blank">
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="assets/icons/x.svg"></use>
-              </svg>
+          </a>
+        </li>
+        <li class="social__item">
+          <a aria-label="Twitter" class="social__link" href="https://twitter.com"
+             rel="nofollow noopener" target="_blank">
+            <svg fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="assets/icons/x.svg"></use>
+            </svg>
 
-            </a>
-          </li>
-          <li class="social__item">
-            <a aria-label="Instagram" class="social__link" href="https://instagram.com"
-                                      rel="nofollow noopener" target="_blank">
+          </a>
+        </li>
+        <li class="social__item">
+          <a aria-label="Instagram" class="social__link" href="https://instagram.com"
+             rel="nofollow noopener" target="_blank">
 
-              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="assets/icons/inst.svg"></use>
-              </svg>
+            <svg fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+              <use xlink:href="assets/icons/inst.svg"></use>
+            </svg>
 
-            </a>
-          </li>
-        </ul>
-      </div>
+          </a>
+        </li>
+      </ul>
       <button aria-label="Open menu" class="header__burger" hidden type="button"></button>
     </div>
   </header>
@@ -230,74 +228,116 @@
     <section class="gallery container" id="gallery">
       <h2>Gallery</h2>
       <div class="gallery__list">
-        <div class="gallery__item"></div>
-        <div class="gallery__item"></div>
-        <div class="gallery__item"></div>
-        <div class="gallery__item"></div>
-        <div class="gallery__item"></div>
+        <div class="gallery__item">
+          <div class="img-wrap">
+            <img alt="grid-image-1" src="assets/img/grid-image-1.jpg">
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="img-wrap">
+            <img alt="grid-image-2" src="assets/img/grid-image-2.jpg">
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="img-wrap">
+            <img alt="grid-image-3" src="assets/img/grid-image-3.jpg">
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="img-wrap">
+            <img alt="grid-image-4" src="assets/img/grid-image-4.jpg">
+          </div>
+        </div>
+        <div class="gallery__item">
+          <div class="img-wrap">
+            <img alt="grid-image-5" src="assets/img/grid-image-5.jpg">
+          </div>
+        </div>
       </div>
-      <button class="btn" type="button">
+      <button class="btn gallery__btn" type="button">
         SEE MORE
       </button>
     </section>
   </main>
-<!--  <footer class="footer" role="contentinfo">-->
-<!--    <div class="footer__map">-->
-<!--    </div>-->
-<!--    <div class="contact">-->
-<!--      <address class="contact__address" id="contact">-->
-<!--        <ul class="contact__list">-->
-<!--          <li>-->
-<!--            <span aria-hidden="true" class="contact__icon"></span>-->
-<!--            <span>91 Nolan Extensions Suite 670</span>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <span aria-hidden="true" class="contact__icon"></span>-->
-<!--            <a href="tel:+0013568682454">+001 356-868-2454</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <span aria-hidden="true" class="contact__icon"></span>-->
-<!--            <a href="mailto:montichello@service.com">montichello@service.com</a>-->
-<!--          </li>-->
-<!--          <li>-->
-<!--            <span aria-hidden="true" class="contact__icon"></span>-->
-<!--            <span>From 07:05AM to 19:30PM</span>-->
-<!--          </li>-->
-<!--        </ul>-->
-<!--      </address>-->
-<!--      <div class="contact__info">-->
-<!--        <form action="#" class="contact__form" method="post">-->
-<!--          <label for="contact-name">Name</label>-->
-<!--          <input autocomplete="name" id="contact-name" name="name" placeholder="Name" type="text">-->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__map">
+    </div>
+    <div class="footer__contact">
+      <address class="contact__address" id="contact">
+        <ul class="contact__list">
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <span>91 Nolan Extensions Suite 670</span>
+          </li>
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <a href="tel:+0013568682454">+001 356-868-2454</a>
+          </li>
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <a href="mailto:montichello@service.com">montichello@service.com</a>
+          </li>
+          <li>
+            <span aria-hidden="true" class="contact__icon"></span>
+            <span>From 07:05AM to 19:30PM</span>
+          </li>
+        </ul>
+      </address>
+      <div class="contact__info">
+        <form action="#" class="contact__form" method="post">
+          <label for="contact-name">Name</label>
+          <input autocomplete="name" id="contact-name" name="name" placeholder="Name" type="text">
 
-<!--          <label for="contact-email">Email</label>-->
-<!--          <input autocomplete="email" id="contact-email" name="email" placeholder="Email" type="email">-->
+          <label for="contact-email">Email</label>
+          <input autocomplete="email" id="contact-email" name="email" placeholder="Email" type="email">
 
-<!--          <button class="btn" type="submit">Submit</button>-->
-<!--        </form>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--    <div class="footer__info">-->
-<!--      <div class="footer__row">-->
-<!--        <div class="footer__logo">-->
-<!--          <a aria-label="Monticello home" href="/">-->
-<!--            <img alt="Monticello logo" src="assets/img/Logo.png">-->
-<!--          </a>-->
-<!--        </div>-->
-<!--        <ul aria-label="Social media" class="social">-->
-<!--          <li class="social__item"><a aria-label="Facebook" class="social__link" href="https://facebook.com"-->
-<!--                                      rel="nofollow noopener" target="_blank"></a></li>-->
-<!--          <li class="social__item"><a aria-label="Twitter" class="social__link" href="https://twitter.com"-->
-<!--                                      rel="nofollow noopener" target="_blank"></a></li>-->
-<!--          <li class="social__item"><a aria-label="Instagram" class="social__link" href="https://instagram.com"-->
-<!--                                      rel="nofollow noopener" target="_blank"></a></li>-->
-<!--        </ul>-->
-<!--      </div>-->
-<!--      <div class="footer__row">-->
-<!--        <small class="footer__copyright">Copyrights © 2020 Montichello</small>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </footer>-->
+          <button class="btn" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer__info">
+      <div class="container">
+
+        <div class="footer__row">
+          <div class="footer__logo logo">
+            <a aria-label="Monticello home" href="/">
+              <img alt="Monticello logo" src="assets/img/Logo.png">
+            </a>
+          </div>
+          <small class="footer__copyright">Copyrights © 2020 Montichello</small>
+        </div>
+        <ul aria-label="Social media" class="social footer__row">
+          <li class="social__item">
+            <a aria-label="Facebook" class="social__link" href="https://facebook.com"
+               rel="nofollow noopener" target="_blank">
+              <svg fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="assets/icons/fb.svg"></use>
+              </svg>
+
+            </a>
+          </li>
+          <li class="social__item">
+            <a aria-label="Twitter" class="social__link" href="https://twitter.com"
+               rel="nofollow noopener" target="_blank">
+              <svg fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="assets/icons/x.svg"></use>
+              </svg>
+
+            </a>
+          </li>
+          <li class="social__item">
+            <a aria-label="Instagram" class="social__link" href="https://instagram.com"
+               rel="nofollow noopener" target="_blank">
+              <svg fill="none" height="40" viewBox="0 0 40 40" width="40" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="assets/icons/inst.svg"></use>
+              </svg>
+
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </div>
 
 </body>

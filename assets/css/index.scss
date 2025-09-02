@@ -3,21 +3,29 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .btn {
   color: #000;
   font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   background-color: transparent;
   padding: 16px 40px;
-  //border-radius: 5px;
   border: black 1px solid;
   cursor: pointer;
 }
 
+.logo {
+  width: 241px;
+  height: 54px;
+}
+.social {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 20px;
+}
 header {
   position: fixed;
   left: 0;
@@ -25,26 +33,15 @@ header {
   top: 54px;
 
   .container {
+    height: 54px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    //min-width: calc(1270px);
-
-    height: 54px;
-
-    .header__logo {
-      width: 241px;
-      height: 54px;
-    }
 
     nav {
       color: #FFF;
       font-family: "Source Sans 3", sans-serif;
       font-size: 0.875rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
-
 
       ul {
         display: inline-flex;
@@ -69,13 +66,7 @@ header {
       }
     }
 
-    .header__icons {
-      ul {
-        display: inline-flex;
-        flex-direction: row;
-        gap: 20px;
-      }
-    }
+
   }
 }
 
@@ -97,9 +88,7 @@ header {
     h1 {
       color: #FFF;
       font-size: 5rem;
-      font-style: normal;
       font-weight: 700;
-      line-height: normal;
       letter-spacing: 0.5rem;
       margin-bottom: 20px;
     }
@@ -107,9 +96,6 @@ header {
     p {
       color: #FFF;
       font-size: 1.125rem;
-      font-style: normal;
-      font-weight: 400;
-      line-height: normal;
       letter-spacing: 0.3375rem;
     }
   }
@@ -119,6 +105,7 @@ h2 {
   text-transform: uppercase;
   position: relative;
   margin-bottom: 90px;
+
   &:before {
     position: relative;
     content: "";
@@ -134,9 +121,7 @@ h2 {
   color: #2C4058;
   text-align: center;
   font-size: 2.75rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 }
 
 .about {
@@ -144,7 +129,10 @@ h2 {
   flex-direction: column;
   gap: 190px;
   margin-bottom: 150px;
-  h2 {margin-bottom: 0}
+
+  h2 {
+    margin-bottom: 0
+  }
 
   .about__item {
     display: flex;
@@ -165,17 +153,12 @@ h2 {
       h3 {
         color: #2C4058;
         font-size: 2.75rem;
-        font-style: normal;
         font-weight: 700;
-        line-height: normal;
       }
 
       p {
         color: #2C4058;
         font-size: 1.375rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
       }
 
       margin-bottom: 20px;
@@ -186,8 +169,6 @@ h2 {
       color: #2C4058;
       font-family: "Open Sans", sans-serif;
       font-size: 1.125rem;
-      font-style: normal;
-      font-weight: 400;
       line-height: 1.875rem; /* 166.667% */
       margin-bottom: 40px;
     }
@@ -207,8 +188,6 @@ h2 {
       font-family: "Open Sans", sans-serif;
       font-size: 0.9375rem;
       font-style: italic;
-      font-weight: 400;
-      line-height: normal;
     }
   }
 }
@@ -222,6 +201,7 @@ h2 {
 
   h2 {
     color: #FFF;
+
     &:before {
       background-color: #FFF;
     }
@@ -229,7 +209,6 @@ h2 {
 
   .container {
     padding: 150px 0;
-    //max-width: unset;
 
     .news__list {
       display: grid;
@@ -241,26 +220,31 @@ h2 {
         width: 370px;
         height: 514px;
         flex-shrink: 0;
+
         .content {
           background-color: #FFF;
           flex-direction: column;
           display: flex;
           align-items: center;
           padding: 20px 30px;
+
           .news__author {
             display: flex;
             flex-direction: row;
             gap: 20px;
             align-content: start;
             justify-content: start;
+
             .news__author-avatar {
               width: 60px;
               height: 60px;
               border-radius: 50%;
             }
+
             .news__author-meta {
               display: flex;
               flex-direction: column;
+
               .news__date {
                 color: #55B7FF;
                 font-size: 0.875rem;
@@ -272,6 +256,86 @@ h2 {
           }
         }
       }
+    }
+  }
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+
+  .gallery__list {
+    margin-bottom: 60px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+
+    .gallery__item {
+      &:first-child {
+        grid-row: 2 span;
+        grid-column: 2 span;
+
+        img {
+          min-width: 580px;
+          min-height: 438px;
+        }
+      }
+
+
+      img {
+        min-width: 285px;
+        min-height: 214px;
+        object-fit: cover;
+      }
+    }
+
+  }
+
+  .gallery__btn {
+    align-self: center;
+  }
+}
+
+.footer {
+  position: relative;
+  height: 100dvh;
+
+  .footer__map {
+    height: 50dvh;
+    background-color: lightgray;
+  }
+
+  .footer__contact {
+    display: none;
+    position: absolute;
+    background: #FFF;
+    width: 770px;
+    height: 450px;
+    flex-shrink: 0;
+  }
+
+  .footer__info {
+    color: #FFF;
+    font-size: 0.875rem;
+    background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%),
+    url("/assets/img/scott-webb-176434 2.jpg") center/cover no-repeat;
+    background-blend-mode: multiply;
+    height: 50dvh;
+
+    position: relative;
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //top: 40vh;
+    //width: 100vw;
+
+    .container {
+      //height: auto;
+
+      max-width: 770px;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

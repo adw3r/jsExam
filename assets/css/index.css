@@ -295,18 +295,29 @@ a {
 }
 body {
   font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .btn {
   color: #000;
   font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   background-color: transparent;
   padding: 16px 40px;
   border: black 1px solid;
   cursor: pointer;
+}
+
+.logo {
+  width: 241px;
+  height: 54px;
+}
+
+.social {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 header {
@@ -316,22 +327,15 @@ header {
   top: 54px;
 }
 header .container {
+  height: 54px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 54px;
-}
-header .container .header__logo {
-  width: 241px;
-  height: 54px;
 }
 header .container nav {
   color: #FFF;
   font-family: "Source Sans 3", sans-serif;
   font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 header .container nav ul {
   display: inline-flex;
@@ -347,11 +351,6 @@ header .container nav ul li svg {
 }
 header .container nav ul li.active svg {
   fill: white;
-}
-header .container .header__icons ul {
-  display: inline-flex;
-  flex-direction: row;
-  gap: 20px;
 }
 
 .hero {
@@ -371,18 +370,13 @@ header .container .header__icons ul {
 .hero .container h1 {
   color: #FFF;
   font-size: 5rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
   letter-spacing: 0.5rem;
   margin-bottom: 20px;
 }
 .hero .container p {
   color: #FFF;
   font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   letter-spacing: 0.3375rem;
 }
 
@@ -393,9 +387,7 @@ h2 {
   color: #2C4058;
   text-align: center;
   font-size: 2.75rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 }
 h2:before {
   position: relative;
@@ -436,24 +428,17 @@ h2:before {
 .about .about__item hgroup h3 {
   color: #2C4058;
   font-size: 2.75rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: normal;
 }
 .about .about__item hgroup p {
   color: #2C4058;
   font-size: 1.375rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 .about .about__item .about__info {
   max-width: 470px;
   color: #2C4058;
   font-family: "Open Sans", sans-serif;
   font-size: 1.125rem;
-  font-style: normal;
-  font-weight: 400;
   line-height: 1.875rem; /* 166.667% */
   margin-bottom: 40px;
 }
@@ -470,8 +455,6 @@ h2:before {
   font-family: "Open Sans", sans-serif;
   font-size: 0.9375rem;
   font-style: italic;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .news {
@@ -529,6 +512,64 @@ h2:before {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150px;
+}
+.gallery .gallery__list {
+  margin-bottom: 60px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.gallery .gallery__list .gallery__item:first-child {
+  grid-row: 2 span;
+  grid-column: 2 span;
+}
+.gallery .gallery__list .gallery__item:first-child img {
+  min-width: 580px;
+  min-height: 438px;
+}
+.gallery .gallery__list .gallery__item img {
+  min-width: 285px;
+  min-height: 214px;
+  object-fit: cover;
+}
+.gallery .gallery__btn {
+  align-self: center;
+}
+
+.footer {
+  position: relative;
+  height: 100dvh;
+}
+.footer .footer__map {
+  height: 50dvh;
+  background-color: lightgray;
+}
+.footer .footer__contact {
+  display: none;
+  position: absolute;
+  background: #FFF;
+  width: 770px;
+  height: 450px;
+  flex-shrink: 0;
+}
+.footer .footer__info {
+  color: #FFF;
+  font-size: 0.875rem;
+  background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%), url("/assets/img/scott-webb-176434 2.jpg") center/cover no-repeat;
+  background-blend-mode: multiply;
+  height: 50dvh;
+  position: relative;
+}
+.footer .footer__info .container {
+  max-width: 770px;
+  display: flex;
+  justify-content: space-between;
 }
 
 /*# sourceMappingURL=index.css.map */

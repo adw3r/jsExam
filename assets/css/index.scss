@@ -475,6 +475,11 @@ h2 {
 }
 
 .loop {
+  &:hover {
+    scale: 1.2;
+    transition: all 0.2s ease;
+    transform: translate(-40%, -42%);
+  }
   position: absolute;
   top: 50%;
   left: 50%;

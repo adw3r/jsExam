@@ -1,39 +1,103 @@
 @use "__style";
+
 body {
   font-family: 'Montserrat', sans-serif;
 }
 
+header {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  top: 54px;
 
-.header {
-  //background-color: #999999;
-  display: flex;
-  align-items: center;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    //min-width: calc(1270px);
 
-  &__logo {
-    //display: inline-block;
-    min-width: 241px;
-    //height: 54px;
-    //justify-content: center;
-    //align-items: center;
-    //flex-shrink: 0;
-  }
+    height: 54px;
 
-  &__nav {
-    &-list {
-      display: inline-flex;
-      gap: 70px;
-      &-item {
-        &.active {
+    .header__logo {
+      width: 241px;
+      height: 54px;
+    }
+
+    nav {
+      color: #FFF;
+      font-family: "Source Sans 3", sans-serif;
+      font-size: 0.875rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+
+
+      ul {
+        display: inline-flex;
+        gap: 45px;
+
+        li {
+          text-transform: uppercase;
+
           svg {
-            fill: white;
+            margin-right: 14px;
+            position: relative;
+            top: -2px
+          }
+
+          &.active {
+            svg {
+              fill: white;
+
+            }
           }
         }
       }
     }
-  }
 
-  &__icons {
-    display: inline-flex;
-    gap: 20px;
+    .header__icons {
+      ul {
+        display: inline-flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+.hero {
+  background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%),
+  url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
+  background-blend-mode: multiply;
+  height: calc(100dvh);
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+      color: #FFF;
+      font-size: 5rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      letter-spacing: 0.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #FFF;
+      font-size: 1.125rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      letter-spacing: 0.3375rem;
+    }
   }
 }

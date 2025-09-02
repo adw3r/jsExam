@@ -222,7 +222,7 @@ img {
 }
 
 body {
-  font-size: 1rem;
+  font-size: 16px;
   color: #232323;
   font-family: sans-serif;
   overflow-y: scroll;
@@ -233,6 +233,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 }
 
 .page main {

@@ -377,6 +377,9 @@ header .container nav ul li.active svg circle {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: background-color 200ms ease, box-shadow 200ms ease;
 }
+.header--scrolled .logo, .header--scrolled .social {
+  filter: invert(1);
+}
 .header--scrolled .container nav {
   color: #2C4058;
 }

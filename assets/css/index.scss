@@ -96,6 +96,9 @@ header {
   background-color: #FFF;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: background-color 200ms ease, box-shadow 200ms ease;
+  .logo, .social {
+    filter: invert(1); // inverts all colors
+  }
 
   .container {
     nav {

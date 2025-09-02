@@ -499,6 +499,13 @@ h2:before {
   font-family: "Open Sans", sans-serif;
   font-size: 0.9375rem;
   font-style: italic;
+  display: flex;
+  gap: 10px;
+  position: relative;
+}
+.about .about__item .about__geo svg {
+  position: relative;
+  top: 4px;
 }
 
 .news {

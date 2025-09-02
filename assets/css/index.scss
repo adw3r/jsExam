@@ -251,6 +251,13 @@ h2 {
       font-family: "Open Sans", sans-serif;
       font-size: 0.9375rem;
       font-style: italic;
+      display: flex;
+      gap: 10px;
+      position: relative;
+      svg {
+        position: relative;
+        top: 4px;
+      }
     }
   }
 }

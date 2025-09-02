@@ -371,6 +371,15 @@ h2 {
     gap: 10px;
 
     .gallery__item {
+      &:hover {
+        svg {
+          opacity: 1;
+        }
+      }
+      svg {
+        transition: all 0.2s ease;
+        opacity: 0;
+      }
       position: relative;
 
       &:first-child {

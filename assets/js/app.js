@@ -51,6 +51,7 @@
     renderNewsFromJson().then(function () {
       setupNewsSlider();
     });
+    setupLightGallery();
   });
 
   // Toggle header background when hero is scrolled past
@@ -75,6 +76,18 @@
     window.addEventListener('resize', function () {
       threshold = hero.offsetHeight - (getHeaderOffset() || 0);
       update();
+    });
+  }
+
+  function setupLightGallery() {
+    var gallery = document.querySelector('.gallery__list');
+    if (!gallery || typeof lightGallery === 'undefined') return;
+    lightGallery(gallery, {
+      selector: '.gallery__link',
+      plugins: [lgZoom, lgThumbnail],
+      speed: 300,
+      download: false,
+      licenseKey: '0000-0000-000-0000' // optional placeholder
     });
   }
 

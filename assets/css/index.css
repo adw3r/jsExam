@@ -602,6 +602,13 @@ h2:before {
 .gallery .gallery__list .gallery__item {
   position: relative;
 }
+.gallery .gallery__list .gallery__item:hover svg {
+  opacity: 1;
+}
+.gallery .gallery__list .gallery__item svg {
+  transition: all 0.2s ease;
+  opacity: 0;
+}
 .gallery .gallery__list .gallery__item:first-child {
   grid-row: 2 span;
   grid-column: 2 span;

@@ -3,22 +3,23 @@
   'use strict';
 
   function getHeaderOffset() {
-    let header = document.querySelector('header');
+    const header = document.querySelector('header');
     if (!header) return 0;
-    let styles = window.getComputedStyle(header);
-    let isFixed = styles.position === 'fixed';
-    if (!isFixed) return 0;
-    let topVal = parseInt(styles.top || '0', 10) || 0;
-    // Only subtract header height if it sits at the very top (covers content)
-    return topVal <= 0 ? header.offsetHeight : 0;
+    const styles = window.getComputedStyle(header);
+    const position = styles.position;
+    const isOverlaying = position === 'fixed' || position === 'sticky';
+    if (!isOverlaying) return 0;
+    const topVal = parseInt(styles.top || '0', 10) || 0;
+    // Subtract header height when it sits at top (covers content)
+    return topVal <= 0 ? header.offsetHeight : header.offsetHeight;
   }
 
   function scrollToId(hash) {
     if (!hash || hash === '#') return;
-    let target = document.querySelector(hash);
+    const target = document.querySelector(hash);
     if (!target) return;
-    let offset = getHeaderOffset();
-    let targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    const offset = getHeaderOffset();
+    const targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: targetTop, behavior: 'smooth' });
     try {
       history.pushState(null, '', hash);
@@ -28,11 +29,11 @@
   }
 
   document.addEventListener('click', function (event) {
-    let link = event.target.closest('a[href^="#"]');
+    const link = event.target.closest('a[href^="#"]');
     if (!link) return;
-    let href = link.getAttribute('href');
+    const href = link.getAttribute('href');
     if (!href || href.length < 2) return; // ignore '#' only
-    let url = new URL(href, window.location.href);
+    const url = new URL(href, window.location.href);
     if (url.pathname.replace(/\/$/, '') !== window.location.pathname.replace(/\/$/, '')) return;
     event.preventDefault();
     scrollToId(url.hash);
@@ -50,7 +51,7 @@
 
   // Toggle header background when hero is scrolled past
   function setupHeaderScrollState() {
-    let header = document.querySelector('header');
+    const header = document.querySelector('header');
     let hero = document.querySelector('.hero');
     if (!header || !hero) return;
 
@@ -72,7 +73,7 @@
       update();
     });
   }
-  
+
   // Scrollspy: toggle nav active based on section under header bottom
   function setupScrollSpy() {
     const navItems = Array.from(document.querySelectorAll('.header__nav .header__nav-item'));

@@ -20,16 +20,22 @@ body {
 .logo {
   width: 241px;
   height: 54px;
+
 }
+
 .social {
   display: inline-flex;
   flex-direction: row;
   gap: 20px;
+  svg:hover {
+    filter: invert(1);
+  }
 }
+
 header {
   position: fixed;
-  left: 0;
   width: 100%;
+  left: 0;
   top: 54px;
   z-index: 100;
 
@@ -58,8 +64,6 @@ header {
           }
 
           &.active {
-            .header__nav-link {
-            }
 
             svg circle {
               stroke: #FFF;
@@ -75,9 +79,17 @@ header {
 }
 
 .header--scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #FFF;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: background-color 200ms ease, box-shadow 200ms ease;
+
+  .logo, .social {
+    filter: invert(1); // inverts all colors
+  }
 
   .container {
     nav {

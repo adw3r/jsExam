@@ -319,11 +319,14 @@ body {
   flex-direction: row;
   gap: 20px;
 }
+.social svg:hover {
+  filter: invert(1);
+}
 
 header {
   position: fixed;
-  left: 0;
   width: 100%;
+  left: 0;
   top: 54px;
   z-index: 100;
 }
@@ -356,9 +359,16 @@ header .container nav ul li.active svg circle {
 }
 
 .header--scrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #FFF;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+.header--scrolled .logo, .header--scrolled .social {
+  filter: invert(1);
 }
 .header--scrolled .container nav {
   color: #2C4058;

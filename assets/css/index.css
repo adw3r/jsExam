@@ -325,6 +325,7 @@ header {
   left: 0;
   width: 100%;
   top: 54px;
+  z-index: 100;
 }
 header .container {
   height: 54px;
@@ -349,8 +350,41 @@ header .container nav ul li svg {
   position: relative;
   top: -2px;
 }
-header .container nav ul li.active svg {
-  fill: white;
+header .container nav ul li.active svg circle {
+  stroke: #FFF;
+  fill: #FFF;
+}
+
+.header--scrolled {
+  background-color: #FFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: background-color 200ms ease, box-shadow 200ms ease;
+}
+.header--scrolled .container nav {
+  color: #2C4058;
+}
+.header--scrolled .header__nav svg circle {
+  stroke: #2C4058;
+}
+.header--scrolled .header__nav-item.active .header__nav-link {
+  color: #2C4058;
+}
+.header--scrolled .header__nav-item.active svg circle {
+  stroke: #2C4058;
+  fill: #2C4058;
+}
+
+header .logo img {
+  filter: none;
+  transition: filter 200ms ease;
+}
+header .social svg {
+  filter: brightness(0) invert(1);
+  transition: filter 200ms ease;
+}
+
+.header--scrolled .social svg {
+  filter: none;
 }
 
 .hero {

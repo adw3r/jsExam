@@ -3,22 +3,22 @@
   'use strict';
 
   function getHeaderOffset() {
-    var header = document.querySelector('header');
+    let header = document.querySelector('header');
     if (!header) return 0;
-    var styles = window.getComputedStyle(header);
-    var isFixed = styles.position === 'fixed';
+    let styles = window.getComputedStyle(header);
+    let isFixed = styles.position === 'fixed';
     if (!isFixed) return 0;
-    var topVal = parseInt(styles.top || '0', 10) || 0;
+    let topVal = parseInt(styles.top || '0', 10) || 0;
     // Only subtract header height if it sits at the very top (covers content)
     return topVal <= 0 ? header.offsetHeight : 0;
   }
 
   function scrollToId(hash) {
     if (!hash || hash === '#') return;
-    var target = document.querySelector(hash);
+    let target = document.querySelector(hash);
     if (!target) return;
-    var offset = getHeaderOffset();
-    var targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
+    let offset = getHeaderOffset();
+    let targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
     window.scrollTo({ top: targetTop, behavior: 'smooth' });
     try {
       history.pushState(null, '', hash);
@@ -28,11 +28,11 @@
   }
 
   document.addEventListener('click', function (event) {
-    var link = event.target.closest('a[href^="#"]');
+    let link = event.target.closest('a[href^="#"]');
     if (!link) return;
-    var href = link.getAttribute('href');
+    let href = link.getAttribute('href');
     if (!href || href.length < 2) return; // ignore '#' only
-    var url = new URL(href, window.location.href);
+    let url = new URL(href, window.location.href);
     if (url.pathname.replace(/\/$/, '') !== window.location.pathname.replace(/\/$/, '')) return;
     event.preventDefault();
     scrollToId(url.hash);
@@ -44,7 +44,103 @@
       // Delay to allow layout to settle
       setTimeout(function () { scrollToId(window.location.hash); }, 0);
     }
+    setupHeaderScrollState();
+    setupScrollSpy();
   });
+
+  // Toggle header background when hero is scrolled past
+  function setupHeaderScrollState() {
+    let header = document.querySelector('header');
+    let hero = document.querySelector('.hero');
+    if (!header || !hero) return;
+
+    let threshold = hero.offsetHeight - (getHeaderOffset() || 0);
+
+    function update() {
+      let y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      if (y >= threshold) {
+        header.classList.add('header--scrolled');
+      } else {
+        header.classList.remove('header--scrolled');
+      }
+    }
+
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', function () {
+      threshold = hero.offsetHeight - (getHeaderOffset() || 0);
+      update();
+    });
+  }
+  
+  // Scrollspy: toggle nav active based on section under header bottom
+  function setupScrollSpy() {
+    const navItems = Array.from(document.querySelectorAll('.header__nav .header__nav-item'));
+    if (!navItems.length) return;
+
+    const entries = navItems.map((item) => {
+      const link = item.querySelector('a[href^="#"]');
+      if (!link) return null;
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return null;
+      const section = document.querySelector(href);
+      if (!section) return null;
+      return { id: href, section, item };
+    }).filter(Boolean);
+
+    if (!entries.length) return;
+
+    const header = document.querySelector('header');
+
+    function getAnchorY() {
+      if (header) {
+        const rect = header.getBoundingClientRect();
+        return Math.max(0, rect.bottom + 1);
+      }
+      return 1;
+    }
+
+    function updateActive() {
+      const anchorY = getAnchorY();
+      let currentId = entries[0].id;
+      let bestDistance = Infinity;
+
+      for (const entry of entries) {
+        const rect = entry.section.getBoundingClientRect();
+        const within = rect.top <= anchorY && rect.bottom > anchorY;
+        if (within) {
+          currentId = entry.id;
+          bestDistance = 0;
+          break;
+        }
+        const distance = anchorY < rect.top ? rect.top - anchorY : anchorY - rect.bottom;
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          currentId = entry.id;
+        }
+      }
+
+      for (const entry of entries) {
+        if (entry.id === currentId) entry.item.classList.add('active');
+        else entry.item.classList.remove('active');
+      }
+    }
+
+    let ticking = false;
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        window.requestAnimationFrame(function () {
+          updateActive();
+          ticking = false;
+        });
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    updateActive();
+  }
 })();
 
 

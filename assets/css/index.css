@@ -534,7 +534,6 @@ h2:before {
   position: relative;
   overflow: hidden;
   display: block;
-  gap: 30px;
   margin-bottom: 150px;
 }
 .news .container .news__list .news__track {

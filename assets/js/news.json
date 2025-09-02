@@ -1,0 +1,39 @@
+{
+  "items": [
+    {
+      "id": "see-the-unmatched-beauty-1",
+      "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.",
+      "excerpt": "Free directories: directories are perfect for customers that are searching for...",
+      "image": "assets/img/Image_1.jpg",
+      "author": {
+        "name": "ALJA BRUN",
+        "avatar": "assets/img/profile_1.png"
+      },
+      "date": "2020-01-20"
+    },
+    {
+      "id": "see-the-unmatched-beauty-2",
+      "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.",
+      "excerpt": "Free directories: directories are perfect for customers that are searching for...",
+      "image": "assets/img/Image_2.jpg",
+      "author": {
+        "name": "DOMINIC FREEMAN",
+        "avatar": "assets/img/profile_2.png"
+      },
+      "date": "2019-12-13"
+    },
+    {
+      "id": "see-the-unmatched-beauty-3",
+      "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.",
+      "excerpt": "Free directories: directories are perfect for customers that are searching for...",
+      "image": "assets/img/Image_3.jpg",
+      "author": {
+        "name": "ALICE WARD",
+        "avatar": "assets/img/profile_3.png"
+      },
+      "date": "2019-11-30"
+    }
+  ]
+}
+
+

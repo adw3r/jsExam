@@ -20,7 +20,7 @@
     if (!target) return;
     const offset = getHeaderOffset();
     const targetTop = target.getBoundingClientRect().top + window.pageYOffset - offset;
-    window.scrollTo({ top: targetTop, behavior: 'smooth' });
+    window.scrollTo({top: targetTop, behavior: 'smooth'});
     try {
       history.pushState(null, '', hash);
     } catch (e) {
@@ -43,11 +43,15 @@
   window.addEventListener('load', function () {
     if (window.location.hash) {
       // Delay to allow layout to settle
-      setTimeout(function () { scrollToId(window.location.hash); }, 0);
+      setTimeout(function () {
+        scrollToId(window.location.hash);
+      }, 0);
     }
     setupHeaderScrollState();
     setupScrollSpy();
-    setupNewsSlider();
+    renderNewsFromJson().then(function () {
+      setupNewsSlider();
+    });
   });
 
   // Toggle header background when hero is scrolled past
@@ -68,11 +72,93 @@
     }
 
     update();
-    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('scroll', update, {passive: true});
     window.addEventListener('resize', function () {
       threshold = hero.offsetHeight - (getHeaderOffset() || 0);
       update();
     });
+  }
+
+  // Render Latest news from JSON file
+  function renderNewsFromJson() {
+    const list = document.querySelector('.news .news__list');
+    if (!list) return;
+    return fetch('assets/js/news.json', {cache: 'no-cache'})
+      .then(function (res) {
+        return res.ok ? res.json() : Promise.reject(res.status);
+      })
+      .then(function (data) {
+        if (!data || !Array.isArray(data.items)) return;
+        const fragment = document.createDocumentFragment();
+        data.items.forEach(function (item) {
+          let article = document.createElement('article');
+          article.className = 'news__item';
+
+          let imageWrap = document.createElement('div');
+          imageWrap.className = 'news__image';
+          let img = document.createElement('img');
+          img.className = 'news__img';
+          img.src = item.image;
+          img.alt = item.title || '';
+          imageWrap.appendChild(img);
+          article.appendChild(imageWrap);
+
+          let content = document.createElement('div');
+          content.className = 'content';
+
+          let h3 = document.createElement('h3');
+          h3.className = 'news__title';
+          h3.textContent = item.title || '';
+          content.appendChild(h3);
+
+          let p = document.createElement('p');
+          p.className = 'news__excerpt';
+          p.textContent = item.excerpt || '';
+          content.appendChild(p);
+
+          let author = document.createElement('div');
+          author.className = 'news__author';
+
+          let avatar = document.createElement('img');
+          avatar.className = 'news__author-avatar';
+          avatar.src = item.author && item.author.avatar ? item.author.avatar : '';
+          avatar.alt = '';
+          author.appendChild(avatar);
+
+          let meta = document.createElement('div');
+          meta.className = 'news__author-meta';
+          let name = document.createElement('span');
+          name.className = 'news__author-name';
+          name.textContent = item.author && item.author.name ? item.author.name : '';
+          let date = document.createElement('span');
+          date.className = 'news__date';
+          date.textContent = formatDate(item.date);
+          meta.appendChild(name);
+          meta.appendChild(date);
+          author.appendChild(meta);
+
+          content.appendChild(author);
+          article.appendChild(content);
+
+          fragment.appendChild(article);
+        });
+
+        list.innerHTML = '';
+        list.appendChild(fragment);
+      })
+      .catch(function () { /* ignore */
+      });
+  }
+
+  function formatDate(iso) {
+    if (!iso) return '';
+    try {
+      const d = new Date(iso);
+      const options = {day: '2-digit', month: 'short', year: 'numeric'};
+      return d.toLocaleDateString('en-GB', options).replace(/\./g, '');
+    } catch (_) {
+      return '';
+    }
   }
 
   // Infinite horizontal slider for Latest news
@@ -104,7 +190,7 @@
     let isPaused = false;
     let lastTs = 0;
     let offset = 0;
-    const speed = 0.1; // px per ms
+    const speed = 0.04; // px per ms
 
     function tick(ts) {
       if (!lastTs) lastTs = ts;
@@ -126,8 +212,12 @@
     }
 
     // Pause on hover
-    list.addEventListener('mouseenter', function () { isPaused = true; });
-    list.addEventListener('mouseleave', function () { isPaused = false; });
+    list.addEventListener('mouseenter', function () {
+      isPaused = true;
+    });
+    list.addEventListener('mouseleave', function () {
+      isPaused = false;
+    });
 
     requestAnimationFrame(tick);
   }
@@ -144,7 +234,7 @@
       if (!href || href === '#') return null;
       const section = document.querySelector(href);
       if (!section) return null;
-      return { id: href, section, item };
+      return {id: href, section, item};
     }).filter(Boolean);
 
     if (!entries.length) return;
@@ -186,6 +276,7 @@
     }
 
     let ticking = false;
+
     function onScroll() {
       if (!ticking) {
         ticking = true;
@@ -196,7 +287,7 @@
       }
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('scroll', onScroll, {passive: true});
     window.addEventListener('resize', onScroll);
     updateActive();
   }

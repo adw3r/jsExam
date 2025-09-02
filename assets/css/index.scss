@@ -405,18 +405,18 @@ h2 {
     background-blend-mode: multiply;
     height: 50dvh;
 
-    position: relative;
-
+    //position: relative;
     .footer__logo {
       margin-bottom: 40px;
     }
-
     .container {
-      //height: auto;
-
+      position: relative;
       max-width: 770px;
-      display: flex;
-      justify-content: space-between;
+      top: 40%;
+      .inner {
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 }

@@ -271,8 +271,8 @@
     </div>
     <div class="footer__contact">
       <h2>GET IN TOUCH</h2>
-      <address class="contact__address">
-        <ul class="contact__list">
+      <div class="footer__contact__inner">
+        <ul class="footer__contact__inner-list">
           <li>
             <span aria-hidden="true" class="contact__icon"></span>
             <span>91 Nolan Extensions Suite 670</span>
@@ -290,16 +290,14 @@
             <span>From 07:05AM to 19:30PM</span>
           </li>
         </ul>
-      </address>
-      <div class="contact__info">
-        <form action="#" class="contact__form" method="post">
-          <label for="contact-name">Name</label>
-          <input autocomplete="name" id="contact-name" name="name" placeholder="Name" type="text">
-
-          <label for="contact-email">Email</label>
-          <input autocomplete="email" id="contact-email" name="email" placeholder="Email" type="email">
-
-          <button class="btn" type="submit">Submit</button>
+        <form action="#" class="footer__contact__inner-form" method="post">
+          <label for="contact-name">
+            <input autocomplete="name" id="contact-name" name="name" placeholder="Name" type="text">
+          </label>
+          <label for="contact-email">
+            <input autocomplete="email" id="contact-email" name="email" placeholder="Email" type="email">
+          </label>
+          <button class="btn form__btn" type="submit">Submit</button>
         </form>
       </div>
     </div>

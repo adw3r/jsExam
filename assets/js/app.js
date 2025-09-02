@@ -1,6 +1,3 @@
-// Smooth scrolling for in-page anchor links with optional fixed header offset
-// import lightSlider from './lightslider.min.js';
-// import $ from './jquery.min';
 (function () {
   'use strict';
 
@@ -292,19 +289,6 @@
     window.addEventListener('scroll', onScroll, {passive: true});
     window.addEventListener('resize', onScroll);
     updateActive();
-    // $('#lightSlider').lightSlider({
-    //   item: 1,
-    //   slideMargin: 0,
-    //   vertical: true,
-    //   loop: true,
-    //   controls: false,     // ❌ Без стрілок
-    //   pager: true,         // ✅ Пагінація
-    //   auto: true,          // ✅ Автоперемикання
-    //   pause: 4000,         // ⏱ Кожні 4 секунди
-    //   mode: 'fade',        // 🎞 Плавний перехід
-    //   enableTouch: true,
-    //   enableDrag: true
-    // });
   }
 })();
 

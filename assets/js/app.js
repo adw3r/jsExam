@@ -81,7 +81,7 @@
   }
 
   function setupLightGallery() {
-    var gallery = document.querySelector('.gallery__list');
+    const gallery = document.querySelector('.gallery__list');
     if (!gallery || typeof lightGallery === 'undefined') return;
     lightGallery(gallery, {
       selector: '.gallery__link',
@@ -121,46 +121,46 @@
         if (!data || !Array.isArray(data.items)) return;
         const fragment = document.createDocumentFragment();
         data.items.forEach(function (item) {
-          let article = document.createElement('article');
+          const article = document.createElement('article');
           article.className = 'news__item';
 
-          let imageWrap = document.createElement('div');
+          const imageWrap = document.createElement('div');
           imageWrap.className = 'news__image';
-          let img = document.createElement('img');
+          const img = document.createElement('img');
           img.className = 'news__img';
           img.src = item.image;
           img.alt = item.title || '';
           imageWrap.appendChild(img);
           article.appendChild(imageWrap);
 
-          let content = document.createElement('div');
+          const content = document.createElement('div');
           content.className = 'content';
 
-          let h3 = document.createElement('h3');
+          const h3 = document.createElement('h3');
           h3.className = 'news__title';
           h3.textContent = item.title || '';
           content.appendChild(h3);
 
-          let p = document.createElement('p');
+          const p = document.createElement('p');
           p.className = 'news__excerpt';
           p.textContent = item.excerpt || '';
           content.appendChild(p);
 
-          let author = document.createElement('div');
+          const author = document.createElement('div');
           author.className = 'news__author';
 
-          let avatar = document.createElement('img');
+          const avatar = document.createElement('img');
           avatar.className = 'news__author-avatar';
           avatar.src = item.author && item.author.avatar ? item.author.avatar : '';
           avatar.alt = '';
           author.appendChild(avatar);
 
-          let meta = document.createElement('div');
+          const meta = document.createElement('div');
           meta.className = 'news__author-meta';
-          let name = document.createElement('span');
+          const name = document.createElement('span');
           name.className = 'news__author-name';
           name.textContent = item.author && item.author.name ? item.author.name : '';
-          let date = document.createElement('span');
+          const date = document.createElement('span');
           date.className = 'news__date';
           date.textContent = formatDate(item.date);
           meta.appendChild(name);

@@ -28,8 +28,14 @@ body {
   flex-direction: row;
   gap: 20px;
 
-  svg:hover {
-    filter: invert(1);
+  svg {
+    transition: filter 200ms ease, transform 200ms ease, opacity 200ms ease;
+  }
+
+  .social__link:hover svg,
+  .social__link:focus-visible svg {
+    transform: translateY(-2px);
+    opacity: 0.85;
   }
 }
 
@@ -87,10 +93,6 @@ header {
   background-color: #FFF;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: background-color 200ms ease, box-shadow 200ms ease;
-
-  .logo, .social {
-    filter: invert(1); // inverts all colors
-  }
 
   .container {
     nav {

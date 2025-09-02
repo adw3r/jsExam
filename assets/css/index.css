@@ -319,8 +319,13 @@ body {
   flex-direction: row;
   gap: 20px;
 }
-.social svg:hover {
-  filter: invert(1);
+.social svg {
+  transition: filter 200ms ease, transform 200ms ease, opacity 200ms ease;
+}
+.social .social__link:hover svg,
+.social .social__link:focus-visible svg {
+  transform: translateY(-2px);
+  opacity: 0.85;
 }
 
 header {
@@ -366,9 +371,6 @@ header .container nav ul li.active svg circle {
   background-color: #FFF;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   transition: background-color 200ms ease, box-shadow 200ms ease;
-}
-.header--scrolled .logo, .header--scrolled .social {
-  filter: invert(1);
 }
 .header--scrolled .container nav {
   color: #2C4058;

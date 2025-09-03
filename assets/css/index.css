@@ -445,8 +445,8 @@ header .social svg {
   letter-spacing: 0.3375rem;
 }
 .hero .glide {
-  height: 100dvw;
-  width: 100dvh;
+  height: 90dvw;
+  width: 100%;
 }
 .hero .glide .glide__track {
   transform: rotate(90deg);
@@ -463,11 +463,10 @@ header .social svg {
 .hero .glide__bullets {
   position: absolute;
   top: 50%;
-  right: -15dvw;
+  right: 50px;
   bottom: auto;
   left: auto;
   transform: translate(-50%, -50%);
-  display: flex;
   flex-direction: column;
   gap: 50px;
   z-index: 3;

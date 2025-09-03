@@ -732,5 +732,113 @@ h2 {
       }
     }
   }
+  .footer {
+    .footer__contact {
+      position: static;
+      top: auto;
+      left: auto;
+      transform: none;
+      height: auto;
+      width: auto;
+      h2 {
+        font-size: 1.5rem;
+      }
+      .footer__contact__inner {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  .footer__logo {
+    margin-bottom: 20px!important;
+  }
+}
 
+@media screen and (max-width: 425px) {
+  header {
+    max-width: 425px;
+  }
+  .gallery {
+    .gallery__list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      //grid-template-columns: repeat(1, 1fr);
+      .gallery__item {
+        &:first-child {
+          img {
+            min-width: 200px;
+            min-height: 200px;
+          }
+        }
+        img {
+          min-width: 200px;
+          min-height: 200px;
+        }
+      }
+    }
+  }
+  .about {
+    gap: 20px;
+    margin-bottom: 40px;
+    .about__item, .about__item:last-child {
+      .about__image {
+        box-shadow: unset;
+      }
+      display: flex;
+      //flex-direction: column;
+      gap: 15px;
+      flex-direction: column-reverse;
+      .about__btn {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  .news {
+    .container {
+      .news__list {
+        margin-bottom: 40px;
+        .news__track {
+          width: 100%!important;
+          .glide__slides {
+            height: 550px!important;
+
+          }
+        }
+        .glide__arrows {
+          opacity: 0;
+        }
+      }
+    }
+  }
+  .gallery {
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+  .footer {
+    .footer__contact {
+      padding: 20px;
+      .footer__contact__inner {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .footer__contact__inner-list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          font-size: 1.2rem;
+        }
+      }
+    }
+    .footer__info {
+      .container {
+        .inner {
+          flex-direction: column;
+          gap: 10px;
+          height: 300px;
+          justify-content: space-evenly;
+        }
+      }
+    }
+  }
 }

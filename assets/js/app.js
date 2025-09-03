@@ -280,6 +280,8 @@ window.addEventListener('load', function () {
       },
       768: {
         perView: 2,
+      },      425: {
+        perView: 1,
       },
     }
   });

@@ -317,6 +317,28 @@
 <script src="assets/js/lg-thumbnail.umd.min.js"></script>
 
 <script defer src="assets/js/app.js"></script>
+<script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+<script>
+  new Glide('.glide', {
+    type: 'carousel',
+    // startAt: 0,
+    perView: 3,
+    // autoplay: true,
+    animationDuration: 1500,
+    animationTimingFunc: 'ease',
+    // height: '400px',
+    // focusAt: 'center',
+    gap: 20,
+    breakpoints: {
+      1024: {
+        perView: 2,
+      },
+      768: {
+        perView: 1,
+      },
+    }
+  }).mount()
+</script>
 </body>
 
 </html>

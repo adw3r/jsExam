@@ -1,4 +1,4 @@
-import Glide from './glide'
+import Glide from './glide.js'
 
 function getHeaderOffset() {
   const header = document.querySelector('header');

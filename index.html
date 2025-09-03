@@ -27,6 +27,7 @@
 </head>
 
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 <div class="mobile-menu" hidden></div>
 <div class="page">
   <header class="header">
@@ -39,7 +40,7 @@
       <nav aria-label="Primary" class="header__nav">
         <ul class="header__nav-list">
           <li class="header__nav-item active">
-            <a class="header__nav-link" href="#about">
+            <a class="header__nav-link" href="#about" aria-current="page">
               <svg fill="none" height="9" viewBox="0 0 9 9" width="9" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="4.5" cy="4.5" r="4" stroke="white"/>
               </svg>
@@ -105,11 +106,7 @@
       <button aria-label="Open menu" class="header__burger" hidden type="button"></button>
     </div>
   </header>
-  <main>
-    <!--    <section class="hero" id="about">-->
-    <!--      <h1 class="hero__title">SIMPLE & MODERN</h1>-->
-    <!--      <p class="hero__subtitle">WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>-->
-    <!--    </section>-->
+  <main id="main">
     <section class="hero" id="about">
       <div class="glide">
         <div class="glide__track" data-glide-el="track">

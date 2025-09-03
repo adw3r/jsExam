@@ -151,29 +151,27 @@ header {
   background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%),
   url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
   background-blend-mode: multiply;
-  height: 100vh;
 
-  .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 40vh;
-    width: 100vw;
+  height: 100dvh;
+  width: 100dvw;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
-    h1 {
-      color: #FFF;
-      font-size: 5rem;
-      font-weight: 700;
-      letter-spacing: 0.5rem;
-      margin-bottom: 20px;
-    }
+  h1 {
+    color: #FFF;
+    font-size: 5rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    margin-bottom: 20px;
+  }
 
-    p {
-      color: #FFF;
-      font-size: 1.125rem;
-      letter-spacing: 0.3375rem;
-    }
+  p {
+    color: #FFF;
+    font-size: 1.125rem;
+    letter-spacing: 0.3375rem;
   }
 }
 

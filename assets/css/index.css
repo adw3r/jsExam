@@ -460,6 +460,18 @@ header .social svg {
   left: 40dvh;
   transform: rotate(-90deg);
 }
+.hero .glide__bullets {
+  position: absolute;
+  top: 50%;
+  right: -15dvw;
+  bottom: auto;
+  left: auto;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  z-index: 3;
+}
 
 h2 {
   text-transform: uppercase;
@@ -480,6 +492,15 @@ h2:before {
   transform: translateX(-50%);
   background-color: #2C4058;
   margin-bottom: 20px;
+}
+
+.news .glide__bullets {
+  position: absolute;
+  bottom: 2em;
+  right: 2em;
+  left: auto;
+  transform: none;
+  z-index: 3;
 }
 
 .about {

@@ -776,6 +776,32 @@ h2:before {
   .header {
     margin-top: 32px;
   }
+  #about > div > div.glide__bullets {
+    top: 50%;
+    gap: 15px;
+    right: 10px;
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    z-index: 3;
+  }
+  #news .container {
+    width: 100%;
+    padding: 50px 0 0 0;
+  }
+  #news .container .glide {
+    width: 100%;
+  }
+  #news .container .glide .glide__track {
+    transform: rotate(0deg);
+    width: 80%;
+  }
+  #news .container .glide .glide__track article {
+    width: 230px;
+    height: 500px;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -589,4 +589,35 @@ h2 {
     //top: 0;
     margin-top: 32px;
   }
+  #about > div > div.glide__bullets {
+    top: 50%;
+    gap: 15px;
+    right: 10px;
+    position: absolute;
+    bottom: auto;
+    left: auto;
+    transform: translate(-50%, -50%);
+    flex-direction: column;
+    z-index: 3;
+  }
+  #news > div > div {
+    //width: 90%;
+  }
+  #news {
+    .container {
+      width: 100%;
+      padding: 50px 0 0 0;
+      .glide {
+        width: 100%;
+        .glide__track {
+          transform: rotate(0deg);
+          width: 80%;
+          article {
+            width: 230px;
+            height: 500px;
+          }
+        }
+      }
+    }
+  }
 }

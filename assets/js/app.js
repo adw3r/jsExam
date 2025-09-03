@@ -285,10 +285,10 @@ window.addEventListener('load', function () {
     type: 'carousel',
     perView: 1,
     animationTimingFunc: 'ease',
-    autoplay: 2400,
+    autoplay: 1700,
     pauseOnHover: false,
     animationDuration: 1200,
-    hoverpause: true,
+    // hoverpause: true,
   });
 
   // Change hero background colors by slide index

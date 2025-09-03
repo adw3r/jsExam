@@ -1,4 +1,5 @@
 import * as glide from '../../node_modules/@glidejs/glide/dist/glide.min.js'
+
 function getHeaderOffset() {
   const header = document.querySelector('header');
   if (!header) return 0;
@@ -83,16 +84,16 @@ function setupGalleryLoopClick() {
     if (!link) return;
     event.preventDefault();
     event.stopPropagation();
-    link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
+    link.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true, view: window}));
   });
 }
 
 function setupFooterMap() {
-  var el = document.querySelector('.footer__map');
+  const el = document.querySelector('.footer__map');
   if (!el || typeof window === 'undefined' || !window.L) return;
 
-  var center = [40.7128, -74.0060]; // New York City
-  var map = window.L.map(el, {
+  const center = [40.7128, -74.0060]; // New York City
+  const map = window.L.map(el, {
     center: center,
     zoom: 12,
     scrollWheelZoom: false,
@@ -103,7 +104,7 @@ function setupFooterMap() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
-  var marker = window.L.marker(center).addTo(map);
+  const marker = window.L.marker(center).addTo(map);
   marker.bindPopup('Monticello, NYC').openPopup();
 }
 
@@ -255,55 +256,6 @@ function renderNewsFromJson() {
     });
 }
 
-function setupNewsSlider() {
-  // Wrap items in a track
-  let track = document.querySelector('.news__track');
-  const items = Array.from(track.querySelectorAll('.news__item'));
-  if (items.length === 0) return;
-
-  // Clone items to allow seamless loop
-  const cloneCount = Math.min(items.length, 5);
-  for (let i = 0; i < cloneCount; i++) {
-    const clone = items[i].cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
-  }
-
-  let isPaused = false;
-  let lastTs = 0;
-  let offset = 0;
-  const speed = 0.04; // px per ms
-
-  function tick(ts) {
-    if (!lastTs) lastTs = ts;
-    const dt = ts - lastTs;
-    lastTs = ts;
-    if (!isPaused) {
-      offset -= dt * speed;
-      const first = track.firstElementChild;
-      if (first) {
-        const firstWidth = first.getBoundingClientRect().width + 30; // include gap
-        if (-offset >= firstWidth) {
-          offset += firstWidth;
-          track.appendChild(first);
-        }
-      }
-      track.style.transform = 'translateX(' + offset + 'px)';
-    }
-    requestAnimationFrame(tick);
-  }
-
-  // Pause on hover
-  list.addEventListener('mouseenter', function () {
-    isPaused = true;
-  });
-  list.addEventListener('mouseleave', function () {
-    isPaused = false;
-  });
-
-  requestAnimationFrame(tick);
-}
-
 window.addEventListener('load', function () {
   if (window.location.hash) {
     // Delay to allow layout to settle
@@ -338,27 +290,29 @@ window.addEventListener('load', function () {
     animationDuration: 1200,
     // hoverpause: true,
   });
+
   // Change hero background colors by slide index
   function updateHeroGradientByIndex(idx) {
-    var hero = document.querySelector('.hero');
+    const hero = document.querySelector('.hero');
     if (!hero) return;
     // Define a small palette
-    var palettes = [
+    const palettes = [
       ['#7E5AFF', '#55B7FF'],
       ['#FF6B6B', '#FFD166'],
       ['#06D6A0', '#118AB2'],
       ['#F72585', '#4361EE']
     ];
-    var colors = palettes[idx % palettes.length];
+    const colors = palettes[idx % palettes.length];
     hero.style.setProperty('--hero-color-1', colors[0]);
     hero.style.setProperty('--hero-color-2', colors[1]);
   }
 
   heroSlider.on('run.after', function () {
     try {
-      var idx = heroSlider.index || 0;
+      const idx = heroSlider.index || 0;
       updateHeroGradientByIndex(idx);
-    } catch (_) {}
+    } catch (_) {
+    }
   });
 
   heroSlider.mount()

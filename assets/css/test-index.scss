@@ -1,0 +1,162 @@
+@use "__style";
+@use "__fonts";
+// Required Core Stylesheet
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "../../node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+.btn {
+  color: #000;
+  font-size: 0.875rem;
+  background-color: transparent;
+  padding: 16px 40px;
+  border: black 1px solid;
+  cursor: pointer;
+}
+
+.logo {
+  width: 241px;
+  height: 54px;
+
+}
+
+.social {
+  display: inline-flex;
+  flex-direction: row;
+  gap: 20px;
+
+  svg {
+    transition: filter 200ms ease, transform 200ms ease, opacity 200ms ease;
+  }
+
+  .social__link:hover svg,
+  .social__link:focus-visible svg {
+    transform: translateY(-2px);
+    opacity: 0.85;
+  }
+}
+
+
+
+
+
+
+h2 {
+  text-transform: uppercase;
+  position: relative;
+  margin-bottom: 90px;
+
+  &:before {
+    position: relative;
+    content: "";
+    display: block;
+    width: 100px;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2C4058;
+    margin-bottom: 20px;
+  }
+
+  color: #2C4058;
+  text-align: center;
+  font-size: 2.75rem;
+  font-weight: 700;
+}
+
+.news {
+  background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%),
+  url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
+  background-blend-mode: multiply;
+  height: 100dvh;
+  margin-bottom: 100px;
+
+  h2 {
+    color: #FFF;
+
+    &:before {
+      background-color: #FFF;
+    }
+  }
+
+  .container {
+    padding: 150px 0;
+
+    .news__list {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      margin-bottom: 150px;
+
+      .news__track {
+        //display: flex;
+        //flex-direction: row;
+        align-items: stretch;
+        gap: 30px;
+        will-change: transform;
+      }
+
+      .news__item {
+        //width: 370px;
+        //height: 514px;
+        flex-shrink: 0;
+
+        .content {
+          background-color: #FFF;
+          flex-direction: column;
+          display: flex;
+          align-items: center;
+          padding: 30px 20px;
+
+          .news__title {
+            margin-bottom: 15px;
+          }
+
+          .news__excerpt {
+            margin-bottom: 40px;
+          }
+
+          .news__author {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            width: 100%;
+            align-items: center;
+
+            .news__author-avatar {
+              width: 60px;
+              height: 60px;
+              border-radius: 50%;
+            }
+
+            .news__author-meta {
+              display: flex;
+              flex-direction: column;
+
+              .news__date {
+                color: #55B7FF;
+                font-size: 0.875rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

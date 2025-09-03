@@ -321,18 +321,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobileMenu = document.querySelector('#mobile-menu');
   const navList = document.querySelector('.header__nav-list');
   if (burger && mobileMenu && navList) {
-    if (!mobileMenu.children.length) {
-      const list = document.createElement('ul');
-      list.className = 'mobile-menu__list';
-      Array.from(navList.querySelectorAll('a')).forEach(function (a) {
-        const li = document.createElement('li');
-        const link = a.cloneNode(true);
-        link.classList.add('mobile-menu__link');
-        li.appendChild(link);
-        list.appendChild(li);
-      });
-      mobileMenu.appendChild(list);
-    }
 
     function closeMenu() {
       mobileMenu.classList.remove('mobile-menu--open');
@@ -358,6 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileMenu.addEventListener('click', function (e) {
       const link = e.target.closest('a');
       if (link) closeMenu();
+      if (e.target.closest('.mobile-menu__close')) closeMenu();
     });
 
     window.addEventListener('keydown', function (e) {

@@ -159,13 +159,13 @@ header {
   display: flex;
   flex-direction: column;
   text-align: center;
-
   h1 {
     color: #FFF;
     font-size: 5rem;
     font-weight: 700;
     letter-spacing: 0.5rem;
     margin-bottom: 20px;
+
   }
 
   p {
@@ -173,6 +173,26 @@ header {
     font-size: 1.125rem;
     letter-spacing: 0.3375rem;
   }
+  .glide {
+    height: 100dvw;
+    width: 100dvh;
+    .glide__track {
+      transform: rotate(90deg);
+      height: 100%;
+      width: 100%;
+      .glide__slides {
+        .glide__slide {
+
+          height: 100dvh;
+          width: 100dvw;
+          position: relative;
+          left: 40dvh;
+          transform: rotate(-90deg);
+        }
+      }
+    }
+  }
+
 }
 
 h2 {
@@ -518,7 +538,6 @@ h2 {
   &:hover {
     scale: 1.2;
     transition: all 0.2s ease;
-    //transform: translate(-40%, -40%);
   }
 
   position: absolute;

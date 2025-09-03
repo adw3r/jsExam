@@ -432,6 +432,22 @@ header .social svg {
   font-size: 1.125rem;
   letter-spacing: 0.3375rem;
 }
+.hero .glide {
+  height: 100dvw;
+  width: 100dvh;
+}
+.hero .glide .glide__track {
+  transform: rotate(90deg);
+  height: 100%;
+  width: 100%;
+}
+.hero .glide .glide__track .glide__slides .glide__slide {
+  height: 100dvh;
+  width: 100dvw;
+  position: relative;
+  left: 40dvh;
+  transform: rotate(-90deg);
+}
 
 h2 {
   text-transform: uppercase;

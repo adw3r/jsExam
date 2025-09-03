@@ -309,6 +309,15 @@ window.addEventListener('load', function () {
       },
     }
   });
+  const heroSlider = new Glide('.hero .glide', {
+    type: 'carousel',
+    perView: 1,
+    animationTimingFunc: 'ease',
+    autoplay: 1200,
+    animationDuration: 1500,
+    // hoverpause: true,
+  });
+  heroSlider.mount()
   renderNewsFromJson().then(function () {
     newsSlider.mount()
     // setupNewsSlider();

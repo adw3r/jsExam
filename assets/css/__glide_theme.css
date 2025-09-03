@@ -122,14 +122,14 @@
   background-color: white;
 }
 .glide--swipeable {
-  cursor: grab;
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
+  /*cursor: grab;*/
+  /*cursor: -moz-grab;*/
+  /*cursor: -webkit-grab;*/
 }
 .glide--dragging {
-  cursor: grabbing;
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
+  /*cursor: grabbing;*/
+  /*cursor: -moz-grabbing;*/
+  /*cursor: -webkit-grabbing;*/
 }
 
 /*# sourceMappingURL=glide.theme.css.map */

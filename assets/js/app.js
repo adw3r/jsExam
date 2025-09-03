@@ -314,6 +314,7 @@ window.addEventListener('load', function () {
     perView: 1,
     animationTimingFunc: 'ease',
     autoplay: 2400,
+    pauseOnHover: false,
     animationDuration: 1200,
     // hoverpause: true,
   });

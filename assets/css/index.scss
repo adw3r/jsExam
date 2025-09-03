@@ -271,7 +271,7 @@ header {
 
 .hero {
   background: linear-gradient(243deg, var(--hero-color-1, #7E5AFF) 16.9%, var(--hero-color-2, #55B7FF) 83.27%),
-  url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
+  url("../img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
   background-blend-mode: multiply;
   transition: --hero-color-1 1200ms ease, --hero-color-2 1200ms ease;
 

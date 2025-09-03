@@ -589,6 +589,9 @@ h2 {
     //top: 0;
     margin-top: 32px;
   }
+  .about {
+    padding: 50px 0 0 0;
+  }
   #about > div > div.glide__bullets {
     top: 50%;
     gap: 15px;
@@ -604,6 +607,7 @@ h2 {
     //width: 90%;
   }
   #news {
+    margin-bottom: 50px;
     .container {
       width: 100%;
       padding: 50px 0 0 0;
@@ -616,6 +620,39 @@ h2 {
             width: 230px;
             height: 500px;
           }
+        }
+      }
+    }
+  }
+  .gallery {
+    margin-bottom: 50px;
+    .gallery__list {
+      grid-template-columns: repeat(2, 1fr);
+      //.gallery__item {
+      //  &:first-child {
+      //    grid-row: span;
+      //    grid-column: span;
+      //  }
+      //}
+      .gallery__item {
+        img {
+          min-width: 300px;
+          min-height: 400px;
+        }
+      }
+
+    }
+  }
+  .footer {
+    height: 100%;
+    .footer__info {
+      height: auto;
+      .container {
+        .inner {
+          //top: 50%;
+          //position: relative;
+          align-items: center;
+          //justify-content: center;
         }
       }
     }

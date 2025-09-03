@@ -776,6 +776,9 @@ h2:before {
   .header {
     margin-top: 32px;
   }
+  .about {
+    padding: 50px 0 0 0;
+  }
   #about > div > div.glide__bullets {
     top: 50%;
     gap: 15px;
@@ -786,6 +789,9 @@ h2:before {
     transform: translate(-50%, -50%);
     flex-direction: column;
     z-index: 3;
+  }
+  #news {
+    margin-bottom: 50px;
   }
   #news .container {
     width: 100%;
@@ -801,6 +807,25 @@ h2:before {
   #news .container .glide .glide__track article {
     width: 230px;
     height: 500px;
+  }
+  .gallery {
+    margin-bottom: 50px;
+  }
+  .gallery .gallery__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery .gallery__list .gallery__item img {
+    min-width: 300px;
+    min-height: 400px;
+  }
+  .footer {
+    height: 100%;
+  }
+  .footer .footer__info {
+    height: auto;
+  }
+  .footer .footer__info .container .inner {
+    align-items: center;
   }
 }
 

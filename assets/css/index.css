@@ -865,6 +865,18 @@ h2:before {
   .about .about__item:last-child .about__image {
     box-shadow: 140px -50px 0 0 #7E5AFF;
   }
+  .news .news__track ul.glide__slides .news__item {
+    height: 500px !important;
+  }
+  .news .news__track ul.glide__slides .news__item .content {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .news .news__track ul.glide__slides .news__item .content .news__excerpt {
+    margin-bottom: 0 !important;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */

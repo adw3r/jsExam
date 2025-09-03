@@ -275,9 +275,11 @@ window.addEventListener('load', function () {
     breakpoints: {
       1024: {
         perView: 2,
+        width: 200,
+        height: 500,
       },
       768: {
-        perView: 1,
+        perView: 2,
       },
     }
   });

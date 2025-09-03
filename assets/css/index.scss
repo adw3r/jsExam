@@ -187,8 +187,8 @@ header {
     letter-spacing: 0.3375rem;
   }
   .glide {
-    height: 90dvw;
-    width: 100%;
+    height: 100dvh;
+    width: 100dvw;
     .glide__track {
       transform: rotate(90deg);
       height: 100%;

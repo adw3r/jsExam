@@ -3,13 +3,9 @@ import Glide from '../../node_modules/@glidejs/glide/dist/glide.esm.js'
 function getHeaderOffset() {
   const header = document.querySelector('header');
   if (!header) return 0;
-  const styles = window.getComputedStyle(header);
-  const position = styles.position;
+  const position = window.getComputedStyle(header).position;
   const isOverlaying = position === 'fixed' || position === 'sticky';
-  if (!isOverlaying) return 0;
-  const topVal = parseInt(styles.top || '0', 10) || 0;
-  // Subtract header height when it sits at top (covers content)
-  return topVal <= 0 ? header.offsetHeight : header.offsetHeight;
+  return isOverlaying ? header.offsetHeight : 0;
 }
 
 function scrollToId(hash) {
@@ -256,7 +252,23 @@ function renderNewsFromJson() {
     });
 }
 
-window.addEventListener('load', function () {
+// Shared palette and updater for hero gradient
+const HERO_GRADIENT_PALETTES = [
+  ['#7E5AFF', '#55B7FF'],
+  ['#FF6B6B', '#FFD166'],
+  ['#06D6A0', '#118AB2'],
+  ['#F72585', '#4361EE']
+];
+
+function updateHeroGradientByIndex(idx) {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+  const colors = HERO_GRADIENT_PALETTES[idx % HERO_GRADIENT_PALETTES.length];
+  hero.style.setProperty('--hero-color-1', colors[0]);
+  hero.style.setProperty('--hero-color-2', colors[1]);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
   if (window.location.hash) {
     // Delay to allow layout to settle
     setTimeout(function () {
@@ -273,16 +285,9 @@ window.addEventListener('load', function () {
     animationDuration: 1500,
     hoverpause: true,
     breakpoints: {
-      1024: {
-        perView: 2,
-        width: 200,
-        height: 500,
-      },
-      768: {
-        perView: 2,
-      },      425: {
-        perView: 1,
-      },
+      1024: { perView: 2 },
+      768: { perView: 2 },
+      425: { perView: 1 }
     }
   });
   const heroSlider = new Glide('.hero .glide', {
@@ -294,22 +299,6 @@ window.addEventListener('load', function () {
     animationDuration: 1200,
     // hoverpause: true,
   });
-
-  // Change hero background colors by slide index
-  function updateHeroGradientByIndex(idx) {
-    const hero = document.querySelector('.hero');
-    if (!hero) return;
-    // Define a small palette
-    const palettes = [
-      ['#7E5AFF', '#55B7FF'],
-      ['#FF6B6B', '#FFD166'],
-      ['#06D6A0', '#118AB2'],
-      ['#F72585', '#4361EE']
-    ];
-    const colors = palettes[idx % palettes.length];
-    hero.style.setProperty('--hero-color-1', colors[0]);
-    hero.style.setProperty('--hero-color-2', colors[1]);
-  }
 
   heroSlider.on('run.after', function () {
     try {

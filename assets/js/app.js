@@ -38,23 +38,6 @@
     scrollToId(url.hash);
   });
 
-  // If page loads with a hash, smooth-scroll to position (useful for direct links)
-  window.addEventListener('load', function () {
-    if (window.location.hash) {
-      // Delay to allow layout to settle
-      setTimeout(function () {
-        scrollToId(window.location.hash);
-      }, 0);
-    }
-    setupHeaderScrollState();
-    setupScrollSpy();
-    renderNewsFromJson().then(function () {
-      setupNewsSlider();
-    });
-    setupLightGallery();
-    setupGalleryLoopClick();
-  });
-
   // Toggle header background when hero is scrolled past
   function setupHeaderScrollState() {
     const header = document.querySelector('header');
@@ -320,6 +303,23 @@
     window.addEventListener('resize', onScroll);
     updateActive();
   }
+
+
+  // If page loads with a hash, smooth-scroll to position (useful for direct links)
+  window.addEventListener('load', function () {
+    if (window.location.hash) {
+      // Delay to allow layout to settle
+      setTimeout(function () {
+        scrollToId(window.location.hash);
+      }, 0);
+    }
+    setupHeaderScrollState();
+    setupScrollSpy();
+    renderNewsFromJson().then(function () {
+      setupNewsSlider();
+    });
+    setupLightGallery();
+    setupGalleryLoopClick();
+  });
+
 })();
-
-

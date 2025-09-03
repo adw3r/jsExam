@@ -3,6 +3,18 @@
 @import "__glide.css";
 @import "__glide_theme.css";
 
+/* Smoothly animatable custom properties for hero gradient colors */
+@property --hero-color-1 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #7E5AFF;
+}
+@property --hero-color-2 {
+  syntax: '<color>';
+  inherits: false;
+  initial-value: #55B7FF;
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -148,9 +160,10 @@ header {
 }
 
 .hero {
-  background: linear-gradient(243deg, #7E5AFF 16.9%, #55B7FF 83.27%),
+  background: linear-gradient(243deg, var(--hero-color-1, #7E5AFF) 16.9%, var(--hero-color-2, #55B7FF) 83.27%),
   url("/assets/img/tu-tram-pham-202263 1.jpg") center/cover no-repeat;
   background-blend-mode: multiply;
+  transition: --hero-color-1 1200ms ease, --hero-color-2 1200ms ease;
 
   height: 100dvh;
   width: 100dvw;

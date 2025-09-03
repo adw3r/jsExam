@@ -313,10 +313,33 @@ window.addEventListener('load', function () {
     type: 'carousel',
     perView: 1,
     animationTimingFunc: 'ease',
-    autoplay: 1200,
-    animationDuration: 1500,
+    autoplay: 2400,
+    animationDuration: 1200,
     // hoverpause: true,
   });
+  // Change hero background colors by slide index
+  function updateHeroGradientByIndex(idx) {
+    var hero = document.querySelector('.hero');
+    if (!hero) return;
+    // Define a small palette
+    var palettes = [
+      ['#7E5AFF', '#55B7FF'],
+      ['#FF6B6B', '#FFD166'],
+      ['#06D6A0', '#118AB2'],
+      ['#F72585', '#4361EE']
+    ];
+    var colors = palettes[idx % palettes.length];
+    hero.style.setProperty('--hero-color-1', colors[0]);
+    hero.style.setProperty('--hero-color-2', colors[1]);
+  }
+
+  heroSlider.on('run.after', function () {
+    try {
+      var idx = heroSlider.index || 0;
+      updateHeroGradientByIndex(idx);
+    } catch (_) {}
+  });
+
   heroSlider.mount()
   renderNewsFromJson().then(function () {
     newsSlider.mount()

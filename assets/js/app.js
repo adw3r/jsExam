@@ -1,4 +1,4 @@
-import Glide from '../../node_modules/@glidejs/glide/dist/glide.esm.js'
+import Glide from './glide'
 
 function getHeaderOffset() {
   const header = document.querySelector('header');

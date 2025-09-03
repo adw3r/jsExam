@@ -48,9 +48,9 @@
     }
     setupHeaderScrollState();
     setupScrollSpy();
-    // renderNewsFromJson().then(function () {
-    //   setupNewsSlider();
-    // });
+    renderNewsFromJson().then(function () {
+      setupNewsSlider();
+    });
     setupLightGallery();
     setupGalleryLoopClick();
   });

@@ -28,7 +28,7 @@
 
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<div class="mobile-menu" hidden></div>
+<nav class="mobile-menu" id="mobile-menu" hidden aria-label="Mobile Navigation"></nav>
 <div class="page">
   <header class="header">
     <div class="container">
@@ -103,7 +103,11 @@
           </a>
         </li>
       </ul>
-      <button aria-label="Open menu" class="header__burger" hidden type="button"></button>
+      <button aria-label="Open menu" class="header__burger" type="button" aria-controls="mobile-menu" aria-expanded="false">
+        <span class="header__burger-bar" aria-hidden="true"></span>
+        <span class="header__burger-bar" aria-hidden="true"></span>
+        <span class="header__burger-bar" aria-hidden="true"></span>
+      </button>
     </div>
   </header>
   <main id="main">

@@ -1,3 +1,5 @@
+@use "__glide.css";
+@use "__glide_theme.css";
 @use "__style";
 @use "__fonts";
 
@@ -292,6 +294,7 @@ h2 {
 
   .container {
     padding: 150px 0;
+    width: 80%;
 
     .news__list {
       position: relative;
@@ -300,65 +303,75 @@ h2 {
       margin-bottom: 150px;
 
       .news__track {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        gap: 30px;
-        will-change: transform;
-      }
+        max-width: min(90%, 1170px);
+        margin: 0 auto;
+        //width: 1170px;
+        //align-self: center;
+        //padding: 0 100px;
+        ul {
+          .news__item {
+            width: 370px;
+            height: 514px;
+            flex-shrink: 0;
 
-      .news__item {
-        width: 370px;
-        height: 514px;
-        flex-shrink: 0;
-
-        .content {
-          background-color: #FFF;
-          flex-direction: column;
-          display: flex;
-          align-items: center;
-          padding: 30px 20px;
-
-          .news__title {
-            margin-bottom: 15px;
-          }
-
-          .news__excerpt {
-            margin-bottom: 40px;
-          }
-
-          .news__author {
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-            width: 100%;
-            align-items: center;
-
-            .news__author-avatar {
-              width: 60px;
-              height: 60px;
-              border-radius: 50%;
-            }
-
-            .news__author-meta {
-              display: flex;
+            .content {
+              background-color: #FFF;
               flex-direction: column;
+              display: flex;
+              align-items: center;
+              padding: 30px 20px;
 
-              .news__date {
-                color: #55B7FF;
-                font-size: 0.875rem;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;
+              .news__title {
+                margin-bottom: 15px;
+              }
+
+              .news__excerpt {
+                margin-bottom: 40px;
+              }
+
+              .news__author {
+                display: flex;
+                flex-direction: row;
+                gap: 20px;
+                width: 100%;
+                align-items: center;
+
+                .news__author-avatar {
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                }
+
+                .news__author-meta {
+                  display: flex;
+                  flex-direction: column;
+
+                  .news__date {
+                    color: #55B7FF;
+                    font-size: 0.875rem;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                  }
+                }
               }
             }
           }
         }
       }
+
     }
   }
 }
-
+.glide__arrows {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  //position: relative;
+  overflow: visible;
+  //z-index: 2;
+}
 .gallery {
   display: flex;
   flex-direction: column;

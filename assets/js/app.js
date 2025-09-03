@@ -1,3 +1,4 @@
+import * as glide from '../../node_modules/@glidejs/glide/dist/glide.min.js'
 function getHeaderOffset() {
   const header = document.querySelector('header');
   if (!header) return 0;
@@ -167,7 +168,7 @@ function setupScrollSpy() {
 }
 
 function renderNewsFromJson() {
-  const list = document.querySelector('.news .news__track');
+  const list = document.querySelector('.news .glide__slides');
   if (!list) return;
   return fetch('assets/js/news.json', {cache: 'no-cache'})
     .then(function (res) {
@@ -178,7 +179,7 @@ function renderNewsFromJson() {
       const fragment = document.createDocumentFragment();
       data.items.forEach(function (item) {
         const article = document.createElement('article');
-        article.className = 'news__item';
+        article.className = 'news__item glide__slide';
 
         const imageWrap = document.createElement('div');
         imageWrap.className = 'news__image';
@@ -293,6 +294,22 @@ window.addEventListener('load', function () {
   setupHeaderScrollState();
   setupScrollSpy();
   renderNewsFromJson().then(function () {
+    new Glide('.glide', {
+      type: 'carousel',
+      perView: 3,
+      animationTimingFunc: 'ease',
+      autoplay: 1200,
+      animationDuration: 1500,
+      hoverpause: true,
+      breakpoints: {
+        1024: {
+          perView: 2,
+        },
+        768: {
+          perView: 1,
+        },
+      }
+    }).mount()
     // setupNewsSlider();
   });
   setupLightGallery();

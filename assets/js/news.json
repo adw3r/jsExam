@@ -32,6 +32,39 @@
         "avatar": "assets/img/profile_3.png"
       },
       "date": "2019-11-30"
+    },
+    {
+      "id": "see-the-unmatched-beauty-4",
+      "title": "SEE THE UNMATCHED BEAUTY OF THE GREAT.",
+      "excerpt": "Free directories: directories are perfect for customers that are searching for...",
+      "image": "assets/img/Image_1.jpg",
+      "author": {
+        "name": "ALJA BRUN",
+        "avatar": "assets/img/profile_1.png"
+      },
+      "date": "2020-01-20"
+    },
+    {
+      "id": "see-the-unmatched-beauty-5",
+      "title": "EFFECTIVE ADVERTISING POINTERS.",
+      "excerpt": "Having a home based business is a wonderful asset to your life...",
+      "image": "assets/img/Image_2.jpg",
+      "author": {
+        "name": "DOMINIC FREEMAN",
+        "avatar": "assets/img/profile_2.png"
+      },
+      "date": "2019-12-13"
+    },
+    {
+      "id": "see-the-unmatched-beauty-6",
+      "title": "HYPNOTIZE YOURSELF INTO THE GHOST.",
+      "excerpt": "There are many things that are important to catalog design...",
+      "image": "assets/img/Image_3.jpg",
+      "author": {
+        "name": "ALICE WARD",
+        "avatar": "assets/img/profile_3.png"
+      },
+      "date": "2019-11-30"
     }
   ]
 }

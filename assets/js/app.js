@@ -86,76 +86,6 @@ function setupGalleryLoopClick() {
   });
 }
 
-function renderNewsFromJson() {
-  const list = document.querySelector('.news .news__list');
-  if (!list) return;
-  return fetch('assets/js/news.json', {cache: 'no-cache'})
-    .then(function (res) {
-      return res.ok ? res.json() : Promise.reject(res.status);
-    })
-    .then(function (data) {
-      if (!data || !Array.isArray(data.items)) return;
-      const fragment = document.createDocumentFragment();
-      data.items.forEach(function (item) {
-        const article = document.createElement('article');
-        article.className = 'news__item';
-
-        const imageWrap = document.createElement('div');
-        imageWrap.className = 'news__image';
-        const img = document.createElement('img');
-        img.className = 'news__img';
-        img.src = item.image;
-        img.alt = item.title || '';
-        imageWrap.appendChild(img);
-        article.appendChild(imageWrap);
-
-        const content = document.createElement('div');
-        content.className = 'content';
-
-        const h3 = document.createElement('h3');
-        h3.className = 'news__title';
-        h3.textContent = item.title || '';
-        content.appendChild(h3);
-
-        const p = document.createElement('p');
-        p.className = 'news__excerpt';
-        p.textContent = item.excerpt || '';
-        content.appendChild(p);
-
-        const author = document.createElement('div');
-        author.className = 'news__author';
-
-        const avatar = document.createElement('img');
-        avatar.className = 'news__author-avatar';
-        avatar.src = item.author && item.author.avatar ? item.author.avatar : '';
-        avatar.alt = '';
-        author.appendChild(avatar);
-
-        const meta = document.createElement('div');
-        meta.className = 'news__author-meta';
-        const name = document.createElement('span');
-        name.className = 'news__author-name';
-        name.textContent = item.author && item.author.name ? item.author.name : '';
-        const date = document.createElement('span');
-        date.className = 'news__date';
-        date.textContent = formatDate(item.date);
-        meta.appendChild(name);
-        meta.appendChild(date);
-        author.appendChild(meta);
-
-        content.appendChild(author);
-        article.appendChild(content);
-
-        fragment.appendChild(article);
-      });
-
-      list.innerHTML = '';
-      list.appendChild(fragment);
-    })
-    .catch(function () { /* ignore */
-    });
-}
-
 function formatDate(iso) {
   if (!iso) return '';
   try {
@@ -165,66 +95,6 @@ function formatDate(iso) {
   } catch (_) {
     return '';
   }
-}
-
-function setupNewsSlider() {
-  const list = document.querySelector('.news .news__list');
-  if (!list) return;
-
-  const items = Array.from(list.querySelectorAll('.news__item'));
-  if (items.length === 0) return;
-
-  // Wrap items in a track
-  let track = list.querySelector('.news__track');
-  if (!track) {
-    track = document.createElement('div');
-    track.className = 'news__track';
-    // Move existing items into the track
-    items.forEach((it) => track.appendChild(it));
-    list.appendChild(track);
-  }
-
-  // Clone items to allow seamless loop
-  const cloneCount = Math.min(items.length, 5);
-  for (let i = 0; i < cloneCount; i++) {
-    const clone = items[i].cloneNode(true);
-    clone.setAttribute('aria-hidden', 'true');
-    track.appendChild(clone);
-  }
-
-  let isPaused = false;
-  let lastTs = 0;
-  let offset = 0;
-  const speed = 0.04; // px per ms
-
-  function tick(ts) {
-    if (!lastTs) lastTs = ts;
-    const dt = ts - lastTs;
-    lastTs = ts;
-    if (!isPaused) {
-      offset -= dt * speed;
-      const first = track.firstElementChild;
-      if (first) {
-        const firstWidth = first.getBoundingClientRect().width + 30; // include gap
-        if (-offset >= firstWidth) {
-          offset += firstWidth;
-          track.appendChild(first);
-        }
-      }
-      track.style.transform = 'translateX(' + offset + 'px)';
-    }
-    requestAnimationFrame(tick);
-  }
-
-  // Pause on hover
-  list.addEventListener('mouseenter', function () {
-    isPaused = true;
-  });
-  list.addEventListener('mouseleave', function () {
-    isPaused = false;
-  });
-
-  requestAnimationFrame(tick);
 }
 
 function setupScrollSpy() {
@@ -296,6 +166,123 @@ function setupScrollSpy() {
   updateActive();
 }
 
+function renderNewsFromJson() {
+  const list = document.querySelector('.news .news__track');
+  if (!list) return;
+  return fetch('assets/js/news.json', {cache: 'no-cache'})
+    .then(function (res) {
+      return res.ok ? res.json() : Promise.reject(res.status);
+    })
+    .then(function (data) {
+      if (!data || !Array.isArray(data.items)) return;
+      const fragment = document.createDocumentFragment();
+      data.items.forEach(function (item) {
+        const article = document.createElement('article');
+        article.className = 'news__item';
+
+        const imageWrap = document.createElement('div');
+        imageWrap.className = 'news__image';
+        const img = document.createElement('img');
+        img.className = 'news__img';
+        img.src = item.image;
+        img.alt = item.title || '';
+        imageWrap.appendChild(img);
+        article.appendChild(imageWrap);
+
+        const content = document.createElement('div');
+        content.className = 'content';
+
+        const h3 = document.createElement('h3');
+        h3.className = 'news__title';
+        h3.textContent = item.title || '';
+        content.appendChild(h3);
+
+        const p = document.createElement('p');
+        p.className = 'news__excerpt';
+        p.textContent = item.excerpt || '';
+        content.appendChild(p);
+
+        const author = document.createElement('div');
+        author.className = 'news__author';
+
+        const avatar = document.createElement('img');
+        avatar.className = 'news__author-avatar';
+        avatar.src = item.author && item.author.avatar ? item.author.avatar : '';
+        avatar.alt = '';
+        author.appendChild(avatar);
+
+        const meta = document.createElement('div');
+        meta.className = 'news__author-meta';
+        const name = document.createElement('span');
+        name.className = 'news__author-name';
+        name.textContent = item.author && item.author.name ? item.author.name : '';
+        const date = document.createElement('span');
+        date.className = 'news__date';
+        date.textContent = formatDate(item.date);
+        meta.appendChild(name);
+        meta.appendChild(date);
+        author.appendChild(meta);
+
+        content.appendChild(author);
+        article.appendChild(content);
+
+        fragment.appendChild(article);
+      });
+
+      list.innerHTML = '';
+      list.appendChild(fragment);
+    });
+}
+
+function setupNewsSlider() {
+  // Wrap items in a track
+  let track = document.querySelector('.news__track');
+  const items = Array.from(track.querySelectorAll('.news__item'));
+  if (items.length === 0) return;
+
+  // Clone items to allow seamless loop
+  const cloneCount = Math.min(items.length, 5);
+  for (let i = 0; i < cloneCount; i++) {
+    const clone = items[i].cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    track.appendChild(clone);
+  }
+
+  let isPaused = false;
+  let lastTs = 0;
+  let offset = 0;
+  const speed = 0.04; // px per ms
+
+  function tick(ts) {
+    if (!lastTs) lastTs = ts;
+    const dt = ts - lastTs;
+    lastTs = ts;
+    if (!isPaused) {
+      offset -= dt * speed;
+      const first = track.firstElementChild;
+      if (first) {
+        const firstWidth = first.getBoundingClientRect().width + 30; // include gap
+        if (-offset >= firstWidth) {
+          offset += firstWidth;
+          track.appendChild(first);
+        }
+      }
+      track.style.transform = 'translateX(' + offset + 'px)';
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Pause on hover
+  list.addEventListener('mouseenter', function () {
+    isPaused = true;
+  });
+  list.addEventListener('mouseleave', function () {
+    isPaused = false;
+  });
+
+  requestAnimationFrame(tick);
+}
+
 window.addEventListener('load', function () {
   if (window.location.hash) {
     // Delay to allow layout to settle
@@ -306,7 +293,7 @@ window.addEventListener('load', function () {
   setupHeaderScrollState();
   setupScrollSpy();
   renderNewsFromJson().then(function () {
-    setupNewsSlider();
+    // setupNewsSlider();
   });
   setupLightGallery();
   setupGalleryLoopClick();

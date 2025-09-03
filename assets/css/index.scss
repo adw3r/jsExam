@@ -1,7 +1,7 @@
-@use "__glide.css";
-@use "__glide_theme.css";
-@use "__style";
 @use "__fonts";
+@use "__style";
+@import "__glide.css";
+@import "__glide_theme.css";
 
 body {
   font-family: 'Montserrat', sans-serif;

@@ -204,6 +204,7 @@ function renderNewsFromJson() {
         img.className = 'news__img';
         img.src = item.image;
         img.alt = item.title || '';
+        img.loading = 'lazy';
         imageWrap.appendChild(img);
         article.appendChild(imageWrap);
 
@@ -227,6 +228,7 @@ function renderNewsFromJson() {
         avatar.className = 'news__author-avatar';
         avatar.src = item.author && item.author.avatar ? item.author.avatar : '';
         avatar.alt = '';
+        avatar.loading = 'lazy';
         author.appendChild(avatar);
 
         const meta = document.createElement('div');

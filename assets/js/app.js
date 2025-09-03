@@ -87,6 +87,26 @@ function setupGalleryLoopClick() {
   });
 }
 
+function setupFooterMap() {
+  var el = document.querySelector('.footer__map');
+  if (!el || typeof window === 'undefined' || !window.L) return;
+
+  var center = [40.7128, -74.0060]; // New York City
+  var map = window.L.map(el, {
+    center: center,
+    zoom: 12,
+    scrollWheelZoom: false,
+  });
+
+  window.L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  var marker = window.L.marker(center).addTo(map);
+  marker.bindPopup('Monticello, NYC').openPopup();
+}
+
 function formatDate(iso) {
   if (!iso) return '';
   try {
@@ -348,4 +368,5 @@ window.addEventListener('load', function () {
   });
   setupLightGallery();
   setupGalleryLoopClick();
+  setupFooterMap();
 });

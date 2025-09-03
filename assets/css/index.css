@@ -680,6 +680,7 @@ h2:before {
   background-color: lightgray;
 }
 .footer__contact {
+  z-index: 1;
   position: absolute;
   top: 40%;
   left: 50%;

@@ -35,6 +35,26 @@ input {
   padding: 16px 40px;
   border: black 1px solid;
   cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, box-shadow 200ms ease, transform 100ms ease;
+
+  &:hover {
+    background-color: #2C4058;
+    color: #FFF;
+    border-color: #2C4058;
+  }
+
+  &:focus-visible {
+    outline: none;
+    border-color: #55B7FF;
+    box-shadow: 0 0 0 3px rgba(85, 183, 255, 0.45);
+  }
+
+  &:active {
+    transform: translateY(1px);
+    background-color: #2C4058;
+    color: #FFF;
+    border-color: #2C4058;
+  }
 }
 
 .logo {

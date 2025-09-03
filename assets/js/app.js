@@ -293,23 +293,24 @@ window.addEventListener('load', function () {
   }
   setupHeaderScrollState();
   setupScrollSpy();
+  const newsSlider = new Glide('.news .glide', {
+    type: 'carousel',
+    perView: 3,
+    animationTimingFunc: 'ease',
+    autoplay: 1200,
+    animationDuration: 1500,
+    hoverpause: true,
+    breakpoints: {
+      1024: {
+        perView: 2,
+      },
+      768: {
+        perView: 1,
+      },
+    }
+  });
   renderNewsFromJson().then(function () {
-    new Glide('.glide', {
-      type: 'carousel',
-      perView: 3,
-      animationTimingFunc: 'ease',
-      autoplay: 1200,
-      animationDuration: 1500,
-      hoverpause: true,
-      breakpoints: {
-        1024: {
-          perView: 2,
-        },
-        768: {
-          perView: 1,
-        },
-      }
-    }).mount()
+    newsSlider.mount()
     // setupNewsSlider();
   });
   setupLightGallery();

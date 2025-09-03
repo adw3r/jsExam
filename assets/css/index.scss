@@ -187,19 +187,13 @@ header {
     letter-spacing: 0.3375rem;
   }
   .glide {
-    height: 100dvh;
-    width: 100dvw;
     .glide__track {
       transform: rotate(90deg);
-      height: 100%;
-      width: 100%;
       .glide__slides {
         .glide__slide {
-
-          height: 100dvh;
-          width: 100dvw;
+          height: 110dvh;
           position: relative;
-          left: 40dvh;
+          left: 45dvh;
           transform: rotate(-90deg);
         }
       }

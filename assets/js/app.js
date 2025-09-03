@@ -288,7 +288,7 @@ window.addEventListener('load', function () {
     autoplay: 2400,
     pauseOnHover: false,
     animationDuration: 1200,
-    // hoverpause: true,
+    hoverpause: true,
   });
 
   // Change hero background colors by slide index
@@ -318,7 +318,6 @@ window.addEventListener('load', function () {
   heroSlider.mount()
   renderNewsFromJson().then(function () {
     newsSlider.mount()
-    // setupNewsSlider();
   });
   setupLightGallery();
   setupGalleryLoopClick();

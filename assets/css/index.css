@@ -494,15 +494,6 @@ h2:before {
   margin-bottom: 20px;
 }
 
-.news .glide__bullets {
-  position: absolute;
-  bottom: 2em;
-  right: 2em;
-  left: auto;
-  transform: none;
-  z-index: 3;
-}
-
 .about {
   display: flex;
   flex-direction: column;

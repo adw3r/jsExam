@@ -1,7 +1,7 @@
 @use "./__fonts";
 @use "./__style";
-@import "./__glide.css";
-@import "./__glide_theme.css";
+@use "./__glide";
+@use "./__glide_theme";
 
 /* Smoothly animatable custom properties for hero gradient colors */
 @property --hero-color-1 {

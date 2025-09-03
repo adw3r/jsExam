@@ -792,6 +792,7 @@ h2:before {
   }
   #news {
     margin-bottom: 50px;
+    height: auto;
   }
   #news .container {
     width: 100%;
@@ -826,6 +827,43 @@ h2:before {
   }
   .footer .footer__info .container .inner {
     align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: min(95%, 768px);
+  }
+  header {
+    max-width: 768px;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .header {
+    margin-top: 0;
+  }
+  .social {
+    gap: 10px;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+  .hero p {
+    font-size: 0.8rem;
+  }
+  .about .about__item {
+    gap: 15px;
+  }
+  .about .about__item .about__image {
+    scale: 0.8;
+    box-shadow: -100px -50px 0 0 #55B7FF;
+  }
+  .about .about__item:last-child {
+    flex-direction: unset;
+  }
+  .about .about__item:last-child .about__image {
+    box-shadow: 140px -50px 0 0 #7E5AFF;
   }
 }
 

@@ -608,6 +608,7 @@ h2 {
   }
   #news {
     margin-bottom: 50px;
+    height: auto;
     .container {
       width: 100%;
       padding: 50px 0 0 0;
@@ -628,12 +629,6 @@ h2 {
     margin-bottom: 50px;
     .gallery__list {
       grid-template-columns: repeat(2, 1fr);
-      //.gallery__item {
-      //  &:first-child {
-      //    grid-row: span;
-      //    grid-column: span;
-      //  }
-      //}
       .gallery__item {
         img {
           min-width: 300px;
@@ -649,12 +644,54 @@ h2 {
       height: auto;
       .container {
         .inner {
-          //top: 50%;
-          //position: relative;
           align-items: center;
-          //justify-content: center;
         }
       }
     }
   }
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: min(95%, 768px);
+  }
+  header {
+    max-width: 768px;
+    position: fixed;
+    //margin-top: 54px;
+    //top: 64px;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+  .header {
+    margin-top: 0;
+  }
+  .social {
+    gap: 10px;
+  }
+  .hero {
+    h1 {
+       font-size: 2.6rem;
+     }
+    p {
+      font-size: 0.8rem;
+    }
+  }
+  .about {
+    .about__item {
+      gap: 15px;
+
+      .about__image {
+        scale: 0.8;
+        box-shadow: -100px -50px 0 0 #55B7FF;
+      }
+      &:last-child {
+        flex-direction: unset;
+        .about__image {
+          box-shadow: 140px -50px 0 0 #7E5AFF;
+        }
+      }
+    }
+  }
+
 }

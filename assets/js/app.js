@@ -1,4 +1,4 @@
-import * as glide from '../../node_modules/@glidejs/glide/dist/glide.min.js'
+import Glide from '../../node_modules/@glidejs/glide/dist/glide.esm.js'
 
 function getHeaderOffset() {
   const header = document.querySelector('header');
@@ -286,7 +286,7 @@ window.addEventListener('load', function () {
     perView: 1,
     animationTimingFunc: 'ease',
     autoplay: 1700,
-    pauseOnHover: false,
+    hoverpause: false,
     animationDuration: 1200,
     // hoverpause: true,
   });
